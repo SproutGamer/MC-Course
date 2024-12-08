@@ -10,11 +10,13 @@ import sproutgamer.mods.mccourse.item.ModItems
 
 object MCCourse : ModInitializer {
 	const val MOD_ID = "mccourse"
-	private val logger: Logger = LoggerFactory.getLogger(MOD_ID)
+	private val logger: Logger = LoggerFactory.getLogger("MC Course")
 
 	override fun onInitialize() {
 
 		logger.info("Hello Fabric world!")
+
+		ModItems.initialize(logger)
 
 		addItemsToGroups()
 
