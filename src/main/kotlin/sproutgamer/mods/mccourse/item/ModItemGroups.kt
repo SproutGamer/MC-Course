@@ -1,7 +1,6 @@
 package sproutgamer.mods.mccourse.item
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup
-import net.minecraft.item.Item
 import net.minecraft.item.ItemGroup
 import net.minecraft.item.ItemStack
 import net.minecraft.registry.Registries
@@ -10,15 +9,19 @@ import net.minecraft.text.Text
 import net.minecraft.util.Identifier
 import org.slf4j.Logger
 import sproutgamer.mods.mccourse.MCCourse
+import sproutgamer.mods.mccourse.block.ModBlocks
 
 class ModItemGroups {
     companion object {
         val FLUORITE_GROUP = registerItemGroup("fluorite", FabricItemGroup.builder()
             .displayName(Text.translatable("itemgroup.mccourse.fluorite"))
             .icon { ItemStack(ModItems.FLUORITE) }
-            .entries { displayContext, entries ->
+            .entries { _, entries ->
                 entries.add(ModItems.FLUORITE)
                 entries.add(ModItems.RAW_FLUORITE)
+                entries.add(ModBlocks.FLUORITE_BLOCK)
+                entries.add(ModBlocks.FLUORITE_ORE)
+                entries.add(ModBlocks.DEEPSLATE_FLUORITE_ORE)
             }
             .build())
 

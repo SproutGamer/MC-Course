@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents
 import net.minecraft.item.ItemGroups
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
+import sproutgamer.mods.mccourse.block.ModBlocks
 import sproutgamer.mods.mccourse.item.ModItemGroups
 import sproutgamer.mods.mccourse.item.ModItems
 
@@ -19,6 +20,7 @@ object MCCourse : ModInitializer {
 
 		ModItems.initialize(logger)
 		ModItemGroups.initialize(logger)
+		ModBlocks.initialize(logger)
 
 		addItemsToGroups()
 
