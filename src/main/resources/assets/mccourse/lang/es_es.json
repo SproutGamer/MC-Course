@@ -1,4 +1,6 @@
 {
   "item.mccourse.fluorite": "Fluorita",
-  "item.mccourse.raw_fluorite": "Fluorita Refinada"
+  "item.mccourse.raw_fluorite": "Fluorita Refinada",
+
+  "itemgroup.mccourse.fluorite": "Grupo de Fluorita"
 }

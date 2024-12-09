@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents
 import net.minecraft.item.ItemGroups
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
+import sproutgamer.mods.mccourse.item.ModItemGroups
 import sproutgamer.mods.mccourse.item.ModItems
 
 object MCCourse : ModInitializer {
@@ -17,6 +18,7 @@ object MCCourse : ModInitializer {
 		logger.info("Hello Fabric world!")
 
 		ModItems.initialize(logger)
+		ModItemGroups.initialize(logger)
 
 		addItemsToGroups()
 
@@ -24,7 +26,6 @@ object MCCourse : ModInitializer {
 
 	private fun addItemsToGroups() {
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register { entries: FabricItemGroupEntries ->
-
 			entries.add(ModItems.FLUORITE)
 			entries.add(ModItems.RAW_FLUORITE)
 		}
