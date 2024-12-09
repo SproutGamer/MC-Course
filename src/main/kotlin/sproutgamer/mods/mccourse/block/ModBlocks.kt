@@ -28,6 +28,15 @@ class ModBlocks {
             .strength(6f)
             .requiresTool()))
 
+        val NETHER_FLUORITE_ORE = registerBlock("nether_fluorite_ore", ExperienceDroppingBlock(UniformIntProvider.create(2, 4), AbstractBlock.Settings.create()
+            .strength(6f)
+            .requiresTool()))
+
+        val END_FLUORITE_ORE = registerBlock("deepslate_fluorite_ore", ExperienceDroppingBlock(UniformIntProvider.create(2, 4), AbstractBlock.Settings.create()
+            .strength(6f)
+            .requiresTool()))
+
+
         private fun registerBlock(name: String, block: Block): Block {
             registerBlockItem(name, block)
             return Registry.register(Registries.BLOCK, Identifier.of(MCCourse.MOD_ID, name), block)

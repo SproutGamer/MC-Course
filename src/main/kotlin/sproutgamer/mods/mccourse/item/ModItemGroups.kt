@@ -22,6 +22,8 @@ class ModItemGroups {
                 entries.add(ModBlocks.FLUORITE_BLOCK)
                 entries.add(ModBlocks.FLUORITE_ORE)
                 entries.add(ModBlocks.DEEPSLATE_FLUORITE_ORE)
+                entries.add(ModBlocks.NETHER_FLUORITE_ORE)
+                entries.add(ModBlocks.END_FLUORITE_ORE)
             }
             .build())
 
