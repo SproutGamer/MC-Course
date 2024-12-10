@@ -14,6 +14,7 @@ class ModItems {
         val RAW_FLUORITE = registerItem("raw_fluorite", Item(Item.Settings()))
 
         val CHAINSAW = registerItem("chainsaw", ChainsawItem(Item.Settings().maxDamage(255)))
+        val STRAWBERRY = registerItem("strawberry", Item(Item.Settings().food(ModFoodComponents.STRAWBERRY)))
 
         private fun registerItem(name: String, item: Item): Item {
             return Registry.register(Registries.ITEM, Identifier.of(MCCourse.MOD_ID, name), item)

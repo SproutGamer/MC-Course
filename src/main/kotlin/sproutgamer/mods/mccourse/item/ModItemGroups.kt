@@ -27,6 +27,7 @@ class ModItemGroups {
 
                 entries.add(ModItems.CHAINSAW)
                 entries.add(ModBlocks.MAGIC_BLOCK)
+                entries.add(ModItems.STRAWBERRY)
             }
             .build())
 
