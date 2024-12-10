@@ -26,6 +26,7 @@ class ModItemGroups {
                 entries.add(ModBlocks.END_FLUORITE_ORE)
 
                 entries.add(ModItems.CHAINSAW)
+                entries.add(ModBlocks.MAGIC_BLOCK)
             }
             .build())
 
