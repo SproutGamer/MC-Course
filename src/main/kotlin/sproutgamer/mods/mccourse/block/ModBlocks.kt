@@ -32,7 +32,7 @@ class ModBlocks {
             .strength(6f)
             .requiresTool()))
 
-        val END_FLUORITE_ORE = registerBlock("deepslate_fluorite_ore", ExperienceDroppingBlock(UniformIntProvider.create(2, 4), AbstractBlock.Settings.create()
+        val END_FLUORITE_ORE = registerBlock("end_fluorite_ore", ExperienceDroppingBlock(UniformIntProvider.create(2, 4), AbstractBlock.Settings.create()
             .strength(6f)
             .requiresTool()))
 

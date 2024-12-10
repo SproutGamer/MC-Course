@@ -5,6 +5,8 @@
   "block.mccourse.fluorite_block": "Bloque de Fluorita",
   "block.mccourse.fluorite_ore": "Mineral de Fluorita",
   "block.mccourse.deepslate_fluorite_ore": "Mineral de Fluorita en Pizarra Profunda",
+  "block.mccourse.nether_fluorite_ore": "Mineral de Fluorita del Inferior",
+  "block.mccourse.end_fluorite_ore": "Mineral de Fluorita del Final",
 
   "itemgroup.mccourse.fluorite": "Grupo de Fluorita"
 }

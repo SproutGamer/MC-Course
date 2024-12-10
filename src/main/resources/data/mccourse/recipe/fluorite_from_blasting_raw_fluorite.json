@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "ingredient": {
+    "item": "mccourse:raw_fluorite"
+  },
+  "result": {
+    "id": "mccourse:fluorite"
+  },
+  "experience": 10,
+  "cookingtime": 100
+}
