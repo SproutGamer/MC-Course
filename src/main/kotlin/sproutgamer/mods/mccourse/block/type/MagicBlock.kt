@@ -14,6 +14,7 @@ import net.minecraft.util.hit.BlockHitResult
 import net.minecraft.util.math.BlockPos
 import net.minecraft.world.World
 import sproutgamer.mods.mccourse.item.ModItems
+import sproutgamer.mods.mccourse.util.ModTags
 
 class MagicBlock(settings: Settings?) : Block(settings) {
 
@@ -34,7 +35,7 @@ class MagicBlock(settings: Settings?) : Block(settings) {
 
     private fun isValidItem(stack: ItemStack?): Boolean {
         if (stack != null) {
-            return stack.item == ModItems.FLUORITE || stack.item == ModItems.RAW_FLUORITE || stack.item == Items.COAL
+            return stack.isIn(ModTags.Items.TRANSFORMABLE_ITEMS)
         }
         return false
     }

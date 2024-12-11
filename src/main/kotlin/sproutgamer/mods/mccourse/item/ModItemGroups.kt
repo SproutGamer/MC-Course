@@ -28,6 +28,7 @@ class ModItemGroups {
                 entries.add(ModItems.CHAINSAW)
                 entries.add(ModBlocks.MAGIC_BLOCK)
                 entries.add(ModItems.STRAWBERRY)
+                entries.add(ModItems.STARLIGHT_ASHES)
             }
             .build())
 

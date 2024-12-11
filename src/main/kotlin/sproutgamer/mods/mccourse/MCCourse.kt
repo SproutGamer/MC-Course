@@ -3,6 +3,7 @@ package sproutgamer.mods.mccourse
 import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents
+import net.fabricmc.fabric.api.registry.FuelRegistry
 import net.minecraft.item.ItemGroups
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
@@ -23,6 +24,8 @@ object MCCourse : ModInitializer {
 		ModBlocks.initialize(logger)
 
 		addItemsToGroups()
+
+		FuelRegistry.INSTANCE.add(ModItems.STARLIGHT_ASHES, 600)
 
 	}
 

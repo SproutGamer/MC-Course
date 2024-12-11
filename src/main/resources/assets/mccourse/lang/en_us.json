@@ -3,8 +3,13 @@
   "item.mccourse.raw_fluorite": "Raw Fluorite",
 
   "item.mccourse.chainsaw": "Chainsaw",
+  "item.mccourse.chainsaw.tooltip": "This chainsaw will cut down trees fast!",
+  "item.mccourse.chainsaw.show_tooltip": "§ePress §aSHIFT§e for more info.",
   "block.mccourse.magic_block": "Block of Magic",
   "item.mccourse.strawberry": "Strawberry",
+  "item.mccourse.strawberry.tooltip": "Warning, may contain luck.",
+
+  "item.mccourse.starlight_ashes": "Starlight Ashes",
 
   "block.mccourse.fluorite_block": "Block of Fluorite",
   "block.mccourse.fluorite_ore": "Fluorite Ore",
