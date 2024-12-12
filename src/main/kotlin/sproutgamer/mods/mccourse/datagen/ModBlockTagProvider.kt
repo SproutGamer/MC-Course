@@ -16,7 +16,9 @@ class ModBlockTagProvider(output: FabricDataOutput?,
                 ModBlocks.FLUORITE_ORE,
                 ModBlocks.DEEPSLATE_FLUORITE_ORE,
                 ModBlocks.NETHER_FLUORITE_ORE,
-                ModBlocks.END_FLUORITE_ORE)
+                ModBlocks.END_FLUORITE_ORE,
+                ModBlocks.FLUORITE_STAIRS,
+                ModBlocks.FLUORITE_SLAB)
 
         getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
             .add(ModBlocks.END_FLUORITE_ORE,

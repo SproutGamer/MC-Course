@@ -29,6 +29,9 @@ class ModLootTableProvider(dataOutput: FabricDataOutput?,
         addDrop(ModBlocks.NETHER_FLUORITE_ORE, variableOreDrops(ModBlocks.DEEPSLATE_FLUORITE_ORE, ModItems.RAW_FLUORITE, 5f, 8f))
         addDrop(ModBlocks.END_FLUORITE_ORE, variableOreDrops(ModBlocks.DEEPSLATE_FLUORITE_ORE, ModItems.RAW_FLUORITE, 6f, 9f))
 
+        addDrop(ModBlocks.FLUORITE_STAIRS)
+        addDrop(ModBlocks.FLUORITE_SLAB, slabDrops(ModBlocks.FLUORITE_SLAB))
+
     }
 
     private fun variableOreDrops(drop: Block?, item: Item, minDrops: Float, maxDrops: Float): LootTable.Builder {

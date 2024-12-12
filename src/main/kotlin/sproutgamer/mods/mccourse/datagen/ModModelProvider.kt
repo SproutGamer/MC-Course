@@ -12,14 +12,17 @@ class ModModelProvider(output: FabricDataOutput?) : FabricModelProvider(output) 
 
     override fun generateBlockStateModels(blockStateModelGenerator: BlockStateModelGenerator?) {
         if (blockStateModelGenerator != null) {
-            blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.FLUORITE_BLOCK)
+            val fluoriteTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.FLUORITE_BLOCK)
 
-            blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.FLUORITE_ORE);
+            blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.FLUORITE_ORE)
             blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DEEPSLATE_FLUORITE_ORE)
             blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.END_FLUORITE_ORE)
             blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.NETHER_FLUORITE_ORE)
 
             blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.MAGIC_BLOCK)
+
+            fluoriteTexturePool.stairs(ModBlocks.FLUORITE_STAIRS)
+            fluoriteTexturePool.slab(ModBlocks.FLUORITE_SLAB)
         }
     }
 

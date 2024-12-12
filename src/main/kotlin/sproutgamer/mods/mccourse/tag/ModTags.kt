@@ -1,4 +1,4 @@
-package sproutgamer.mods.mccourse.util
+package sproutgamer.mods.mccourse.tag
 
 import net.minecraft.block.Block
 import net.minecraft.item.Item

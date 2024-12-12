@@ -13,7 +13,7 @@ import net.minecraft.util.ActionResult
 import net.minecraft.util.hit.BlockHitResult
 import net.minecraft.util.math.BlockPos
 import net.minecraft.world.World
-import sproutgamer.mods.mccourse.util.ModTags
+import sproutgamer.mods.mccourse.tag.ModTags
 
 class MagicBlock(settings: Settings?) : Block(settings) {
 
