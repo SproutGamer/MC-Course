@@ -47,6 +47,15 @@ class ModBlocks {
         val FLUORITE_PRESSURE_PLATE = registerBlock("fluorite_pressure_plate", PressurePlateBlock(BlockSetType.IRON,
             AbstractBlock.Settings.create().strength(2f)
                 .requiresTool()))
+        val FLUORITE_FENCE = registerBlock("fluorite_fence", FenceBlock(
+            AbstractBlock.Settings.create().strength(2f)
+                .requiresTool()))
+        val FLUORITE_FENCE_GATE = registerBlock("fluorite_fence_gate", FenceGateBlock(WoodType.ACACIA,
+            AbstractBlock.Settings.create().strength(2f)
+                .requiresTool()))
+        val FLUORITE_WALL = registerBlock("fluorite_wall", WallBlock(
+            AbstractBlock.Settings.create().strength(2f)
+                .requiresTool()))
 
 
         private fun registerBlock(name: String, block: Block): Block {

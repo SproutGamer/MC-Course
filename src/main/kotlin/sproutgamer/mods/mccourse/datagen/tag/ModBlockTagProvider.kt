@@ -20,7 +20,10 @@ class ModBlockTagProvider(output: FabricDataOutput?,
                 ModBlocks.FLUORITE_STAIRS,
                 ModBlocks.FLUORITE_SLAB,
                 ModBlocks.FLUORITE_BUTTON,
-                ModBlocks.FLUORITE_PRESSURE_PLATE)
+                ModBlocks.FLUORITE_PRESSURE_PLATE,
+                ModBlocks.FLUORITE_FENCE,
+                ModBlocks.FLUORITE_FENCE_GATE,
+                ModBlocks.FLUORITE_WALL)
 
         getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
             .add(ModBlocks.END_FLUORITE_ORE,
@@ -28,6 +31,10 @@ class ModBlockTagProvider(output: FabricDataOutput?,
 
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
             .add(ModBlocks.DEEPSLATE_FLUORITE_ORE)
+
+        getOrCreateTagBuilder(BlockTags.FENCES).add(ModBlocks.FLUORITE_FENCE)
+        getOrCreateTagBuilder(BlockTags.FENCE_GATES).add(ModBlocks.FLUORITE_FENCE_GATE)
+        getOrCreateTagBuilder(BlockTags.WALLS).add(ModBlocks.FLUORITE_WALL)
     }
 
 }

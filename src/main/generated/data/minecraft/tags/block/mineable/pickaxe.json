@@ -8,6 +8,9 @@
     "mccourse:fluorite_stairs",
     "mccourse:fluorite_slab",
     "mccourse:fluorite_button",
-    "mccourse:fluorite_pressure_plate"
+    "mccourse:fluorite_pressure_plate",
+    "mccourse:fluorite_fence",
+    "mccourse:fluorite_fence_gate",
+    "mccourse:fluorite_wall"
   ]
 }
