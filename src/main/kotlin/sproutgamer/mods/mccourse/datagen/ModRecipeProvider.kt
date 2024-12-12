@@ -2,11 +2,11 @@ package sproutgamer.mods.mccourse.datagen
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider
-import net.minecraft.block.Block
 import net.minecraft.block.Blocks
 import net.minecraft.data.server.recipe.RecipeExporter
+import net.minecraft.data.server.recipe.RecipeProvider
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder
-import net.minecraft.item.Item
+import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder
 import net.minecraft.item.ItemConvertible
 import net.minecraft.recipe.Ingredient
 import net.minecraft.recipe.book.RecipeCategory
@@ -28,6 +28,24 @@ class ModRecipeProvider(output: FabricDataOutput?,
 
         offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.FLUORITE_SLAB, ModItems.FLUORITE)
         offerStairsRecipe(exporter, ModBlocks.FLUORITE_STAIRS, ModItems.FLUORITE)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.REDSTONE, ModBlocks.FLUORITE_BUTTON)
+            .input(ModItems.FLUORITE)
+            .criterion(hasItem(ModItems.FLUORITE), conditionsFromItem(ModItems.FLUORITE))
+            .offerTo(exporter)
+        offerPressurePlateRecipe(exporter, ModBlocks.FLUORITE_PRESSURE_PLATE, ModItems.FLUORITE)
+        createFenceRecipe(ModBlocks.FLUORITE_FENCE, Ingredient.ofItems(ModItems.FLUORITE))
+            .criterion(hasItem(ModItems.FLUORITE), conditionsFromItem(ModItems.FLUORITE))
+            .offerTo(exporter)
+        createFenceGateRecipe(ModBlocks.FLUORITE_FENCE_GATE, Ingredient.ofItems(ModItems.FLUORITE))
+            .criterion(hasItem(ModItems.FLUORITE), conditionsFromItem(ModItems.FLUORITE))
+            .offerTo(exporter)
+        offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.FLUORITE_WALL, ModItems.FLUORITE)
+        createDoorRecipe(ModBlocks.FLUORITE_DOOR, Ingredient.ofItems(ModItems.FLUORITE))
+            .criterion(hasItem(ModItems.FLUORITE), conditionsFromItem(ModItems.FLUORITE))
+            .offerTo(exporter)
+        createTrapdoorRecipe(ModBlocks.FLUORITE_TRAPDOOR, Ingredient.ofItems(ModItems.FLUORITE))
+            .criterion(hasItem(ModItems.FLUORITE), conditionsFromItem(ModItems.FLUORITE))
+            .offerTo(exporter)
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.RAW_FLUORITE)
             .pattern("SSS")

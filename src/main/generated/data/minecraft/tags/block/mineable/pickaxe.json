@@ -11,6 +11,8 @@
     "mccourse:fluorite_pressure_plate",
     "mccourse:fluorite_fence",
     "mccourse:fluorite_fence_gate",
-    "mccourse:fluorite_wall"
+    "mccourse:fluorite_wall",
+    "mccourse:fluorite_door",
+    "mccourse:fluorite_trapdoor"
   ]
 }

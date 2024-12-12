@@ -23,7 +23,9 @@ class ModBlockTagProvider(output: FabricDataOutput?,
                 ModBlocks.FLUORITE_PRESSURE_PLATE,
                 ModBlocks.FLUORITE_FENCE,
                 ModBlocks.FLUORITE_FENCE_GATE,
-                ModBlocks.FLUORITE_WALL)
+                ModBlocks.FLUORITE_WALL,
+                ModBlocks.FLUORITE_DOOR,
+                ModBlocks.FLUORITE_TRAPDOOR)
 
         getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
             .add(ModBlocks.END_FLUORITE_ORE,

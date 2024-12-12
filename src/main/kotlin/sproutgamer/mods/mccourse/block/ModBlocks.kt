@@ -56,6 +56,12 @@ class ModBlocks {
         val FLUORITE_WALL = registerBlock("fluorite_wall", WallBlock(
             AbstractBlock.Settings.create().strength(2f)
                 .requiresTool()))
+        val FLUORITE_DOOR = registerBlock("fluorite_door", DoorBlock(BlockSetType.IRON,
+            AbstractBlock.Settings.create().strength(2f)
+                .requiresTool().nonOpaque()))
+        val FLUORITE_TRAPDOOR = registerBlock("fluorite_trapdoor", TrapdoorBlock(BlockSetType.IRON,
+            AbstractBlock.Settings.create().strength(2f)
+                .requiresTool().nonOpaque()))
 
 
         private fun registerBlock(name: String, block: Block): Block {

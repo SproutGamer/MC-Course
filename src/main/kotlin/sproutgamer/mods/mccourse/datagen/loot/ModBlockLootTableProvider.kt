@@ -36,6 +36,8 @@ class ModBlockLootTableProvider(dataOutput: FabricDataOutput?,
         addDrop(ModBlocks.FLUORITE_FENCE)
         addDrop(ModBlocks.FLUORITE_FENCE_GATE)
         addDrop(ModBlocks.FLUORITE_WALL)
+        addDrop(ModBlocks.FLUORITE_DOOR, doorDrops(ModBlocks.FLUORITE_DOOR))
+        addDrop(ModBlocks.FLUORITE_TRAPDOOR)
 
     }
 
