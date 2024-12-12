@@ -1,4 +1,4 @@
-package sproutgamer.mods.mccourse.datagen
+package sproutgamer.mods.mccourse.datagen.loot
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider
@@ -17,8 +17,8 @@ import sproutgamer.mods.mccourse.block.ModBlocks
 import sproutgamer.mods.mccourse.item.ModItems
 import java.util.concurrent.CompletableFuture
 
-class ModLootTableProvider(dataOutput: FabricDataOutput?,
-                           registryLookup: CompletableFuture<RegistryWrapper.WrapperLookup>?) : FabricBlockLootTableProvider(dataOutput, registryLookup) {
+class ModBlockLootTableProvider(dataOutput: FabricDataOutput?,
+                                registryLookup: CompletableFuture<RegistryWrapper.WrapperLookup>?) : FabricBlockLootTableProvider(dataOutput, registryLookup) {
 
     override fun generate() {
         addDrop(ModBlocks.FLUORITE_BLOCK)
@@ -31,6 +31,8 @@ class ModLootTableProvider(dataOutput: FabricDataOutput?,
 
         addDrop(ModBlocks.FLUORITE_STAIRS)
         addDrop(ModBlocks.FLUORITE_SLAB, slabDrops(ModBlocks.FLUORITE_SLAB))
+        addDrop(ModBlocks.FLUORITE_BUTTON)
+        addDrop(ModBlocks.FLUORITE_PRESSURE_PLATE)
 
     }
 

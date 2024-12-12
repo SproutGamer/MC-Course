@@ -1,4 +1,4 @@
-package sproutgamer.mods.mccourse.datagen
+package sproutgamer.mods.mccourse.datagen.tag
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider

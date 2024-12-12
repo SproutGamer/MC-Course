@@ -23,6 +23,11 @@ class ModModelProvider(output: FabricDataOutput?) : FabricModelProvider(output) 
 
             fluoriteTexturePool.stairs(ModBlocks.FLUORITE_STAIRS)
             fluoriteTexturePool.slab(ModBlocks.FLUORITE_SLAB)
+            fluoriteTexturePool.button(ModBlocks.FLUORITE_BUTTON)
+            fluoriteTexturePool.pressurePlate(ModBlocks.FLUORITE_PRESSURE_PLATE)
+            // fluoriteTexturePool.fence(TODO())
+            // fluoriteTexturePool.fenceGate(TODO())
+            // fluoriteTexturePool.wall(TODO())
         }
     }
 

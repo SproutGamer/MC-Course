@@ -1,11 +1,6 @@
 package sproutgamer.mods.mccourse.block
 
-import net.minecraft.block.AbstractBlock
-import net.minecraft.block.Block
-import net.minecraft.block.Blocks
-import net.minecraft.block.ExperienceDroppingBlock
-import net.minecraft.block.SlabBlock
-import net.minecraft.block.StairsBlock
+import net.minecraft.block.*
 import net.minecraft.item.BlockItem
 import net.minecraft.item.Item
 import net.minecraft.registry.Registries
@@ -39,12 +34,19 @@ class ModBlocks {
 
         val MAGIC_BLOCK = registerBlock("magic_block", MagicBlock(AbstractBlock.Settings.copy(Blocks.AMETHYST_BLOCK)))
 
-        val FLUORITE_STAIRS = registerBlock("fluorite_stairs", StairsBlock(ModBlocks.FLUORITE_BLOCK.defaultState, AbstractBlock.Settings.create()
+        val FLUORITE_STAIRS = registerBlock("fluorite_stairs", StairsBlock(
+            FLUORITE_BLOCK.defaultState, AbstractBlock.Settings.create()
             .strength(2f)
             .requiresTool()))
         val FLUORITE_SLAB = registerBlock("fluorite_slab", SlabBlock(AbstractBlock.Settings.create()
             .strength(2f)
             .requiresTool()))
+        val FLUORITE_BUTTON = registerBlock("fluorite_button", ButtonBlock(BlockSetType.IRON, 10,
+            AbstractBlock.Settings.create().strength(2f)
+                .requiresTool()))
+        val FLUORITE_PRESSURE_PLATE = registerBlock("fluorite_pressure_plate", PressurePlateBlock(BlockSetType.IRON,
+            AbstractBlock.Settings.create().strength(2f)
+                .requiresTool()))
 
 
         private fun registerBlock(name: String, block: Block): Block {

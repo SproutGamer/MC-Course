@@ -1,4 +1,4 @@
-package sproutgamer.mods.mccourse.datagen
+package sproutgamer.mods.mccourse.datagen.tag
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider
@@ -18,7 +18,9 @@ class ModBlockTagProvider(output: FabricDataOutput?,
                 ModBlocks.NETHER_FLUORITE_ORE,
                 ModBlocks.END_FLUORITE_ORE,
                 ModBlocks.FLUORITE_STAIRS,
-                ModBlocks.FLUORITE_SLAB)
+                ModBlocks.FLUORITE_SLAB,
+                ModBlocks.FLUORITE_BUTTON,
+                ModBlocks.FLUORITE_PRESSURE_PLATE)
 
         getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
             .add(ModBlocks.END_FLUORITE_ORE,

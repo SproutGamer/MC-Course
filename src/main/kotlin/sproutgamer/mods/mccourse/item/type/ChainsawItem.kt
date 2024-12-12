@@ -27,7 +27,6 @@ class ChainsawItem(settings: Settings?) : Item(settings) {
                         EquipmentSlot.MAINHAND
                     )
                 }
-
             }
         }
 
