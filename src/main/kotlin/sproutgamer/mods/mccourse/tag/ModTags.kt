@@ -10,6 +10,10 @@ import sproutgamer.mods.mccourse.MCCourse
 class ModTags {
     class Blocks {
         companion object {
+            val NEEDS_FLUORITE_TOOL = createTag("needs_fluorite_tool")
+            val INCORRECT_FOR_FLUORITE_TOOL = createTag("incorrect_for_fluorite_tool")
+
+
             private fun createTag(name: String): TagKey<Block> {
                 return TagKey.of(RegistryKeys.BLOCK, Identifier.of(MCCourse.MOD_ID, name))
             }
@@ -19,6 +23,7 @@ class ModTags {
     class Items {
         companion object {
             val TRANSFORMABLE_ITEMS = createTag("transformable_items")
+
 
             private fun createTag(name: String): TagKey<Item> {
                 return TagKey.of(RegistryKeys.ITEM, Identifier.of(MCCourse.MOD_ID, name))

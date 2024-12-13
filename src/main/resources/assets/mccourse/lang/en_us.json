@@ -9,6 +9,12 @@
   "item.mccourse.strawberry": "Strawberry",
   "item.mccourse.strawberry.tooltip": "Warning, may contain luck.",
 
+  "item.mccourse.fluorite_sword": "Fluorite Sword",
+  "item.mccourse.fluorite_pickaxe": "Fluorite Pickaxe",
+  "item.mccourse.fluorite_shovel": "Fluorite Shovel",
+  "item.mccourse.fluorite_axe": "Fluorite Axe",
+  "item.mccourse.fluorite_hoe": "Fluorite Hoe",
+
   "block.mccourse.fluorite_slab": "Fluorite Slab",
   "block.mccourse.fluorite_stairs": "Fluorite Stairs",
   "block.mccourse.fluorite_button": "Fluorite Button",
@@ -27,5 +33,13 @@
   "block.mccourse.nether_fluorite_ore": "Nether Fluorite Ore",
   "block.mccourse.end_fluorite_ore": "End Fluorite Ore",
 
-  "itemgroup.mccourse.fluorite": "Fluorite Group"
+  "itemgroup.mccourse.fluorite": "Fluorite Group",
+
+  "item.mccourse.explosive_snowball": "Explosive Snowball",
+  "block.mccourse.lucky_block": "Lucky Block",
+  "block.mccourse.lucky_block.event.1.item": "The Stick of Justice",
+  "block.mccourse.lucky_block.event.4.zombie": "Bob",
+  "block.mccourse.lucky_block.event.9.dog": "Milo",
+  "block.mccourse.lucky_block.event.11.item": "Super Furious X-Bow",
+  "block.mccourse.lucky_block.event.11.item.lore": "§r§fIt shoots... really fast."
 }

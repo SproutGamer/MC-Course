@@ -39,6 +39,9 @@ class ModItemGroups {
                 entries.add(ModBlocks.FLUORITE_WALL)
                 entries.add(ModBlocks.FLUORITE_DOOR)
                 entries.add(ModBlocks.FLUORITE_TRAPDOOR)
+
+                entries.add(ModBlocks.LUCKY_BLOCK)
+                entries.add(ModItems.EXPLOSIVE_SNOWBALL)
             }
             .build())
 

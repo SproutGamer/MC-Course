@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider
 import net.minecraft.data.client.BlockStateModelGenerator
 import net.minecraft.data.client.ItemModelGenerator
 import net.minecraft.data.client.Models
+import net.minecraft.item.Items
 import sproutgamer.mods.mccourse.block.ModBlocks
 import sproutgamer.mods.mccourse.item.ModItems
 
@@ -31,6 +32,8 @@ class ModModelProvider(output: FabricDataOutput?) : FabricModelProvider(output) 
 
             blockStateModelGenerator.registerDoor(ModBlocks.FLUORITE_DOOR)
             blockStateModelGenerator.registerTrapdoor(ModBlocks.FLUORITE_TRAPDOOR)
+
+            blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LUCKY_BLOCK)
         }
     }
 
@@ -42,6 +45,14 @@ class ModModelProvider(output: FabricDataOutput?) : FabricModelProvider(output) 
             itemModelGenerator.register(ModItems.CHAINSAW, Models.GENERATED)
             itemModelGenerator.register(ModItems.STRAWBERRY, Models.GENERATED)
             itemModelGenerator.register(ModItems.STARLIGHT_ASHES, Models.GENERATED)
+
+            itemModelGenerator.register(ModItems.FLUORITE_SWORD, Models.HANDHELD)
+            itemModelGenerator.register(ModItems.FLUORITE_PICKAXE, Models.HANDHELD)
+            itemModelGenerator.register(ModItems.FLUORITE_SHOVEL, Models.HANDHELD)
+            itemModelGenerator.register(ModItems.FLUORITE_AXE, Models.HANDHELD)
+            itemModelGenerator.register(ModItems.FLUORITE_HOE, Models.HANDHELD)
+
+            itemModelGenerator.register(ModItems.EXPLOSIVE_SNOWBALL, Items.SNOWBALL, Models.GENERATED)
         }
     }
 

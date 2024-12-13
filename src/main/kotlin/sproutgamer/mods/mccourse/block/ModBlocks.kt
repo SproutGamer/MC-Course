@@ -10,7 +10,9 @@ import net.minecraft.util.Identifier
 import net.minecraft.util.math.intprovider.UniformIntProvider
 import org.slf4j.Logger
 import sproutgamer.mods.mccourse.MCCourse
+import sproutgamer.mods.mccourse.block.type.LuckyBlock
 import sproutgamer.mods.mccourse.block.type.MagicBlock
+import sproutgamer.mods.mccourse.tag.ModTags
 
 class ModBlocks {
     companion object {
@@ -62,6 +64,8 @@ class ModBlocks {
         val FLUORITE_TRAPDOOR = registerBlock("fluorite_trapdoor", TrapdoorBlock(BlockSetType.IRON,
             AbstractBlock.Settings.create().strength(2f)
                 .requiresTool().nonOpaque()))
+
+        val LUCKY_BLOCK = registerBlock("lucky_block", LuckyBlock(AbstractBlock.Settings.copy(Blocks.GLASS)))
 
 
         private fun registerBlock(name: String, block: Block): Block {

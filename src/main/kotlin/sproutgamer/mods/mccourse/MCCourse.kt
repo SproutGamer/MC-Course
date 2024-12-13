@@ -10,14 +10,13 @@ import org.slf4j.LoggerFactory
 import sproutgamer.mods.mccourse.block.ModBlocks
 import sproutgamer.mods.mccourse.item.ModItemGroups
 import sproutgamer.mods.mccourse.item.ModItems
+import kotlin.random.Random
 
 object MCCourse : ModInitializer {
 	const val MOD_ID = "mccourse"
 	private val logger: Logger = LoggerFactory.getLogger("MC Course")
 
 	override fun onInitialize() {
-
-		logger.info("Hello Fabric world!")
 
 		ModItems.initialize(logger)
 		ModItemGroups.initialize(logger)
