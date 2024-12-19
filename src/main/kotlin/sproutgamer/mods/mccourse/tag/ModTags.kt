@@ -23,6 +23,7 @@ class ModTags {
     class Items {
         companion object {
             val TRANSFORMABLE_ITEMS = createTag("transformable_items")
+            val FLUORITE_REPAIR = createTag("fluorite_repair")
 
 
             private fun createTag(name: String): TagKey<Item> {

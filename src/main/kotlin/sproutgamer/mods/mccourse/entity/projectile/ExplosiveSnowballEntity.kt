@@ -1,25 +1,30 @@
 package sproutgamer.mods.mccourse.entity.projectile
 
-import net.minecraft.entity.EntityType
-import net.minecraft.entity.damage.DamageSource
-import net.minecraft.entity.damage.DamageSources
-import net.minecraft.entity.damage.DamageType
-import net.minecraft.entity.damage.DamageTypes
+import net.minecraft.block.Block
+import net.minecraft.block.Blocks
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.entity.projectile.thrown.SnowballEntity
+import net.minecraft.item.ItemStack
+import net.minecraft.registry.Registries
 import net.minecraft.registry.RegistryKeys
-import net.minecraft.sound.SoundCategory
-import net.minecraft.sound.SoundEvents
+import net.minecraft.registry.entry.RegistryEntry
+import net.minecraft.registry.entry.RegistryEntryList
 import net.minecraft.util.hit.BlockHitResult
 import net.minecraft.world.World
+import net.minecraft.world.explosion.AdvancedExplosionBehavior
 import net.minecraft.world.explosion.Explosion
-import net.minecraft.world.explosion.ExplosionBehavior
+import sproutgamer.mods.mccourse.tag.ModTags
+import sproutgamer.mods.mccourse.util.ModUtils
+import java.util.*
 
-class ExplosiveSnowballEntity(world: World, private val player: PlayerEntity) : SnowballEntity(world, player) {
+class ExplosiveSnowballEntity(world: World, private val player: PlayerEntity, stack: ItemStack) : SnowballEntity(world, player, stack) {
 
     override fun onBlockHit(blockHitResult: BlockHitResult?) {
         if (blockHitResult != null) {
-            world.createExplosion(player, Explosion.createDamageSource(world, player), null, x, y, z, 5f, true, World.ExplosionSourceType.TRIGGER)
+            val immuneBlocks: RegistryEntryList<Block> = RegistryEntryList.of(RegistryEntry.of(Blocks.OBSIDIAN), RegistryEntry.of(Blocks.BEDROCK))
+
+            val behavior = AdvancedExplosionBehavior(true, true, Optional.of(0.5f), Optional.of(immuneBlocks))
+            world.createExplosion(player, Explosion.createDamageSource(world, player), behavior, x, y, z, 5f, true, World.ExplosionSourceType.TRIGGER)
         }
 
         super.onBlockHit(blockHitResult)

@@ -3,14 +3,14 @@ package sproutgamer.mods.mccourse
 import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents
-import net.fabricmc.fabric.api.registry.FuelRegistry
+import net.fabricmc.fabric.api.registry.FuelRegistryEvents
+import net.minecraft.item.FuelRegistry
 import net.minecraft.item.ItemGroups
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import sproutgamer.mods.mccourse.block.ModBlocks
 import sproutgamer.mods.mccourse.item.ModItemGroups
 import sproutgamer.mods.mccourse.item.ModItems
-import kotlin.random.Random
 
 object MCCourse : ModInitializer {
 	const val MOD_ID = "mccourse"
@@ -24,7 +24,9 @@ object MCCourse : ModInitializer {
 
 		addItemsToGroups()
 
-		FuelRegistry.INSTANCE.add(ModItems.STARLIGHT_ASHES, 600)
+		FuelRegistryEvents.BUILD.register { builder, _ ->
+			builder.add(ModItems.STARLIGHT_ASHES, 600)
+		}
 
 	}
 

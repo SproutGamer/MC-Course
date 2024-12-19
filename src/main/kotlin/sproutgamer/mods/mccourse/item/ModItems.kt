@@ -2,8 +2,8 @@ package sproutgamer.mods.mccourse.item
 
 import net.minecraft.item.*
 import net.minecraft.item.tooltip.TooltipType
-import net.minecraft.registry.Registries
-import net.minecraft.registry.Registry
+import net.minecraft.registry.RegistryKey
+import net.minecraft.registry.RegistryKeys
 import net.minecraft.text.Text
 import net.minecraft.util.Identifier
 import net.minecraft.util.Rarity
@@ -14,11 +14,11 @@ import sproutgamer.mods.mccourse.item.type.ExplosiveSnowballItem
 
 class ModItems {
     companion object {
-        val FLUORITE = registerItem("fluorite", Item(Item.Settings()))
-        val RAW_FLUORITE = registerItem("raw_fluorite", Item(Item.Settings()))
+        val FLUORITE = registerItem("fluorite", ::Item, Item.Settings())
+        val RAW_FLUORITE = registerItem("raw_fluorite", ::Item, Item.Settings())
 
-        val CHAINSAW = registerItem("chainsaw", ChainsawItem(Item.Settings().maxDamage(255)))
-        val STRAWBERRY = registerItem("strawberry", object : Item(Settings().food(ModFoodComponents.STRAWBERRY)) {
+        val CHAINSAW = registerItem("chainsaw", ::ChainsawItem, Item.Settings().maxDamage(255))
+        val STRAWBERRY = registerItem("strawberry", { settings -> object : Item(settings) {
             override fun appendTooltip(
                 stack: ItemStack?,
                 context: TooltipContext?,
@@ -29,25 +29,41 @@ class ModItems {
 
                 super.appendTooltip(stack, context, tooltip, type)
             }
-        })
+        } }, Item.Settings().food(ModFoodComponents.STRAWBERRY, ModFoodComponents.STRAWBERRY_EFFECT))
 
-        val STARLIGHT_ASHES = registerItem("starlight_ashes", Item(Item.Settings()))
+        val STARLIGHT_ASHES = registerItem("starlight_ashes", ::Item, Item.Settings())
 
-        val FLUORITE_SWORD = registerItem("fluorite_sword", SwordItem(ModToolMaterials.FLUORITE,
-            Item.Settings().attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.FLUORITE, 8, -2.4f))))
-        val FLUORITE_PICKAXE = registerItem("fluorite_pickaxe", PickaxeItem(ModToolMaterials.FLUORITE,
-            Item.Settings().attributeModifiers(PickaxeItem.createAttributeModifiers(ModToolMaterials.FLUORITE, 6f, -2.8f))))
-        val FLUORITE_SHOVEL = registerItem("fluorite_shovel", ShovelItem(ModToolMaterials.FLUORITE,
-            Item.Settings().attributeModifiers(ShovelItem.createAttributeModifiers(ModToolMaterials.FLUORITE, 6.5f, -3f))))
-        val FLUORITE_AXE = registerItem("fluorite_axe", AxeItem(ModToolMaterials.FLUORITE,
-            Item.Settings().attributeModifiers(AxeItem.createAttributeModifiers(ModToolMaterials.FLUORITE, 11f, -3.2f))))
-        val FLUORITE_HOE = registerItem("fluorite_hoe", HoeItem(ModToolMaterials.FLUORITE,
-            Item.Settings().attributeModifiers(HoeItem.createAttributeModifiers(ModToolMaterials.FLUORITE, 5f, -3f))))
+        val FLUORITE_SWORD = registerItem(
+            "fluorite_sword", { settings -> SwordItem(ModToolMaterial.FLUORITE, 8f, -2.4f, settings) },
+                Item.Settings()
+        )
+        val FLUORITE_PICKAXE = registerItem(
+            "fluorite_pickaxe", { settings -> PickaxeItem(ModToolMaterial.FLUORITE, 6f, -2.8f, settings) },
+                Item.Settings()
+        )
+        val FLUORITE_SHOVEL = registerItem(
+            "fluorite_shovel", { settings -> ShovelItem(ModToolMaterial.FLUORITE, 6.5f, -3f, settings) },
+                Item.Settings()
+        )
+        val FLUORITE_AXE = registerItem(
+            "fluorite_axe", { settings -> AxeItem(ModToolMaterial.FLUORITE, 11f, -3.2f, settings) },
+                Item.Settings()
+        )
+        val FLUORITE_HOE = registerItem(
+            "fluorite_hoe", { settings -> HoeItem(ModToolMaterial.FLUORITE, 0f , -3f, settings) },
+                Item.Settings()
+        )
 
-        val EXPLOSIVE_SNOWBALL = registerItem("explosive_snowball", ExplosiveSnowballItem(Item.Settings().rarity(Rarity.RARE)))
+        val EXPLOSIVE_SNOWBALL = registerItem(
+            "explosive_snowball", ::ExplosiveSnowballItem, Item.Settings().rarity(Rarity.RARE)
+        )
 
-        private fun registerItem(name: String, item: Item): Item {
-            return Registry.register(Registries.ITEM, Identifier.of(MCCourse.MOD_ID, name), item)
+        private fun registerItem(path: String, factory: (Item.Settings) -> Item, settings: Item.Settings): Item {
+            val id = Identifier.of(MCCourse.MOD_ID, path)
+            val key = RegistryKey.of(RegistryKeys.ITEM, id)
+
+            val item = Items.register(key, factory, settings)
+            return item
         }
 
         fun initialize(logger: Logger) {

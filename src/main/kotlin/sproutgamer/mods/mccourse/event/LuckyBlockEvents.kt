@@ -1,6 +1,5 @@
 package sproutgamer.mods.mccourse.event
 
-import net.minecraft.block.Block
 import net.minecraft.block.Blocks
 import net.minecraft.component.DataComponentTypes
 import net.minecraft.component.type.LoreComponent
@@ -12,24 +11,18 @@ import net.minecraft.entity.SpawnReason
 import net.minecraft.entity.effect.StatusEffectInstance
 import net.minecraft.entity.effect.StatusEffects
 import net.minecraft.entity.player.PlayerEntity
-import net.minecraft.item.Item
 import net.minecraft.item.ItemStack
 import net.minecraft.item.Items
-import net.minecraft.registry.RegistryKeys
 import net.minecraft.server.world.ServerWorld
 import net.minecraft.text.Text
 import net.minecraft.util.Rarity
 import net.minecraft.util.math.BlockPos
 import net.minecraft.village.TradeOffer
-import net.minecraft.village.TradeOfferList
 import net.minecraft.village.TradedItem
 import net.minecraft.world.World
-import org.joml.Matrix3dc
 import sproutgamer.mods.mccourse.block.ModBlocks
 import sproutgamer.mods.mccourse.item.ModItems
 import sproutgamer.mods.mccourse.util.ModUtils
-import kotlin.math.E
-import kotlin.random.Random
 
 class LuckyBlockEvents(private val world: World, private val player: PlayerEntity, private val pos: BlockPos) {
 

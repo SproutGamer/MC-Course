@@ -17,6 +17,9 @@ class ModItemTagProvider(output: FabricDataOutput, completableFuture: Completabl
                 ModItems.RAW_FLUORITE,
                 Items.COAL,
                 Items.STICK)
+
+        getOrCreateTagBuilder(ModTags.Items.FLUORITE_REPAIR)
+            .add(ModItems.FLUORITE)
     }
 
 }

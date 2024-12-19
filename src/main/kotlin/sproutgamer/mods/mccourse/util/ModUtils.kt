@@ -5,8 +5,10 @@ import net.minecraft.entity.LivingEntity
 import net.minecraft.item.ItemConvertible
 import net.minecraft.item.ItemStack
 import net.minecraft.registry.DynamicRegistryManager
+import net.minecraft.registry.Registries
 import net.minecraft.registry.RegistryKey
 import net.minecraft.registry.RegistryKeys
+import net.minecraft.registry.entry.RegistryEntry
 import net.minecraft.util.math.BlockPos
 import net.minecraft.world.World
 
@@ -39,7 +41,9 @@ class ModUtils {
             fun addEnchantmentsToItemStack(stack: ItemStack, registryManager: DynamicRegistryManager,
                                            enchantmentToLevel: Map<RegistryKey<net.minecraft.enchantment.Enchantment>, Int>) {
                 for (enchantmentEntry in enchantmentToLevel) {
-                    stack.addEnchantment(registryManager.get(RegistryKeys.ENCHANTMENT).entryOf(enchantmentEntry.key), enchantmentEntry.value)
+                    val enchantment = registryManager.getOrThrow(RegistryKeys.ENCHANTMENT).get(enchantmentEntry.key)
+                    val level = enchantmentEntry.value
+                    stack.addEnchantment(RegistryEntry.of(enchantment), level)
                 }
             }
 

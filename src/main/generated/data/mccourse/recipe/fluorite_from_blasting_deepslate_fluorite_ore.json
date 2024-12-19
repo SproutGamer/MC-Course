@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.2,
+  "group": "fluorite",
+  "ingredient": "mccourse:deepslate_fluorite_ore",
+  "result": {
+    "id": "mccourse:fluorite"
+  }
+}

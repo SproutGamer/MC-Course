@@ -1,10 +1,10 @@
 package sproutgamer.mods.mccourse.datagen
 
+import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider
-import net.minecraft.data.client.BlockStateModelGenerator
-import net.minecraft.data.client.ItemModelGenerator
-import net.minecraft.data.client.Models
+import net.minecraft.client.data.BlockStateModelGenerator
+import net.minecraft.client.data.ItemModelGenerator
+import net.minecraft.client.data.Models
 import net.minecraft.item.Items
 import sproutgamer.mods.mccourse.block.ModBlocks
 import sproutgamer.mods.mccourse.item.ModItems
@@ -52,7 +52,7 @@ class ModModelProvider(output: FabricDataOutput?) : FabricModelProvider(output) 
             itemModelGenerator.register(ModItems.FLUORITE_AXE, Models.HANDHELD)
             itemModelGenerator.register(ModItems.FLUORITE_HOE, Models.HANDHELD)
 
-            itemModelGenerator.register(ModItems.EXPLOSIVE_SNOWBALL, Items.SNOWBALL, Models.GENERATED)
+            itemModelGenerator.registerWithTextureSource(ModItems.EXPLOSIVE_SNOWBALL, Items.SNOWBALL, Models.GENERATED)
         }
     }
 

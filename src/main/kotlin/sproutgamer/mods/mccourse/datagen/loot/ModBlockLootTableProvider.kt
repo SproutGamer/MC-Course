@@ -42,7 +42,7 @@ class ModBlockLootTableProvider(dataOutput: FabricDataOutput?,
     }
 
     private fun variableOreDrops(drop: Block?, item: Item, minDrops: Float, maxDrops: Float): LootTable.Builder {
-        val impl = registryLookup.getWrapperOrThrow(RegistryKeys.ENCHANTMENT)
+        val impl = registries.getOrThrow(RegistryKeys.ENCHANTMENT)
         return this.dropsWithSilkTouch(
             drop,
             applyExplosionDecay(
