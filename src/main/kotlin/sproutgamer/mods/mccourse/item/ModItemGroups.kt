@@ -40,6 +40,21 @@ class ModItemGroups {
                 entries.add(ModBlocks.FLUORITE_DOOR)
                 entries.add(ModBlocks.FLUORITE_TRAPDOOR)
 
+                entries.add(ModItems.FLUORITE_SWORD)
+                entries.add(ModItems.FLUORITE_PICKAXE)
+                entries.add(ModItems.FLUORITE_SHOVEL)
+                entries.add(ModItems.FLUORITE_AXE)
+                entries.add(ModItems.FLUORITE_HOE)
+                entries.add(ModItems.FLUORITE_PAXEL)
+                entries.add(ModItems.FLUORITE_HAMMER)
+
+                entries.add(ModItems.FLUORITE_HELMET)
+                entries.add(ModItems.FLUORITE_CHESTPLATE)
+                entries.add(ModItems.FLUORITE_LEGGINGS)
+                entries.add(ModItems.FLUORITE_BOOTS)
+
+                entries.add(ModItems.FLUORITE_HORSE_ARMOR)
+
                 entries.add(ModBlocks.LUCKY_BLOCK)
                 entries.add(ModItems.EXPLOSIVE_SNOWBALL)
             }

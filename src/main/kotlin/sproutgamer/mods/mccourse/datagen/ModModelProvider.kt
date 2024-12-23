@@ -5,8 +5,15 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.minecraft.client.data.BlockStateModelGenerator
 import net.minecraft.client.data.ItemModelGenerator
 import net.minecraft.client.data.Models
+import net.minecraft.client.render.entity.equipment.EquipmentModel
+import net.minecraft.entity.EquipmentSlot
 import net.minecraft.item.Items
+import net.minecraft.item.equipment.EquipmentAssetKeys
+import net.minecraft.item.equipment.EquipmentType
+import net.minecraft.util.Identifier
+import sproutgamer.mods.mccourse.MCCourse
 import sproutgamer.mods.mccourse.block.ModBlocks
+import sproutgamer.mods.mccourse.equipment.ModEquipmentAssetKeys
 import sproutgamer.mods.mccourse.item.ModItems
 
 class ModModelProvider(output: FabricDataOutput?) : FabricModelProvider(output) {
@@ -51,8 +58,17 @@ class ModModelProvider(output: FabricDataOutput?) : FabricModelProvider(output) 
             itemModelGenerator.register(ModItems.FLUORITE_SHOVEL, Models.HANDHELD)
             itemModelGenerator.register(ModItems.FLUORITE_AXE, Models.HANDHELD)
             itemModelGenerator.register(ModItems.FLUORITE_HOE, Models.HANDHELD)
+            itemModelGenerator.register(ModItems.FLUORITE_PAXEL, Models.HANDHELD)
+            itemModelGenerator.register(ModItems.FLUORITE_HAMMER, Models.HANDHELD)
 
             itemModelGenerator.registerWithTextureSource(ModItems.EXPLOSIVE_SNOWBALL, Items.SNOWBALL, Models.GENERATED)
+
+            itemModelGenerator.registerArmor(ModItems.FLUORITE_HELMET, ModEquipmentAssetKeys.FLUORITE, "helmet", false)
+            itemModelGenerator.registerArmor(ModItems.FLUORITE_CHESTPLATE, ModEquipmentAssetKeys.FLUORITE, "chestplate", false)
+            itemModelGenerator.registerArmor(ModItems.FLUORITE_LEGGINGS, ModEquipmentAssetKeys.FLUORITE, "leggings", false)
+            itemModelGenerator.registerArmor(ModItems.FLUORITE_BOOTS, ModEquipmentAssetKeys.FLUORITE, "boots", false)
+
+            itemModelGenerator.register(ModItems.FLUORITE_HORSE_ARMOR, Models.GENERATED)
         }
     }
 

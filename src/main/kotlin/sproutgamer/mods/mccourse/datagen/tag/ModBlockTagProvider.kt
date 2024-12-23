@@ -38,6 +38,11 @@ class ModBlockTagProvider(output: FabricDataOutput?,
         getOrCreateTagBuilder(BlockTags.FENCES).add(ModBlocks.FLUORITE_FENCE)
         getOrCreateTagBuilder(BlockTags.FENCE_GATES).add(ModBlocks.FLUORITE_FENCE_GATE)
         getOrCreateTagBuilder(BlockTags.WALLS).add(ModBlocks.FLUORITE_WALL)
+
+        getOrCreateTagBuilder(ModTags.Blocks.PAXEL_MINEABLE)
+            .forceAddTag(BlockTags.PICKAXE_MINEABLE)
+            .forceAddTag(BlockTags.AXE_MINEABLE)
+            .forceAddTag(BlockTags.SHOVEL_MINEABLE)
     }
 
 }

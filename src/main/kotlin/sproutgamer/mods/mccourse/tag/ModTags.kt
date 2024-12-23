@@ -13,6 +13,7 @@ class ModTags {
             val NEEDS_FLUORITE_TOOL = createTag("needs_fluorite_tool")
             val INCORRECT_FOR_FLUORITE_TOOL = createTag("incorrect_for_fluorite_tool")
 
+            val PAXEL_MINEABLE = createTag("paxel_mineable")
 
             private fun createTag(name: String): TagKey<Block> {
                 return TagKey.of(RegistryKeys.BLOCK, Identifier.of(MCCourse.MOD_ID, name))
