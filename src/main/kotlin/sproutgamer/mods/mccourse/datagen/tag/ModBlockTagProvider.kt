@@ -45,4 +45,8 @@ class ModBlockTagProvider(output: FabricDataOutput?,
             .forceAddTag(BlockTags.SHOVEL_MINEABLE)
     }
 
+    override fun getName(): String {
+        return "MC Course Block Tag Provider"
+    }
+
 }

@@ -44,6 +44,9 @@
 
   "itemgroup.mccourse.fluorite": "Fluorite Group",
 
+  "trim_material.mccourse.fluorite": "Fluorite Material",
+  "trim_pattern.mccourse.kaupen": "Kaupen Armor Pattern",
+
   "item.mccourse.explosive_snowball": "Explosive Snowball",
   "block.mccourse.lucky_block": "Lucky Block",
   "block.mccourse.lucky_block.event.1.item": "The Stick of Justice",

@@ -79,7 +79,9 @@ class ModItems {
         val FLUORITE_BOOTS = registerItem("fluorite_boots", { settings -> ModArmorItem(ModArmorMaterials.FLUORITE, EquipmentType.BOOTS, settings) },
             Item.Settings())
 
-        val FLUORITE_HORSE_ARMOR = registerItem("fluorite_horse_armor", { settings -> AnimalArmorItem(ModArmorMaterials.FLUORITE, AnimalArmorItem.Type.EQUESTRIAN, settings) }, Item.Settings() )
+        val FLUORITE_HORSE_ARMOR = registerItem("fluorite_horse_armor", { settings -> AnimalArmorItem(ModArmorMaterials.FLUORITE, AnimalArmorItem.Type.EQUESTRIAN, settings) }, Item.Settings())
+
+        val KAUPEN_SMITHING_TEMPLATE = registerItem("kaupen_armor_trim_smithing_template", { settings -> SmithingTemplateItem.of(settings) }, Item.Settings())
 
         private fun registerItem(path: String, factory: (Item.Settings) -> Item, settings: Item.Settings): Item {
             val id = Identifier.of(MCCourse.MOD_ID, path)

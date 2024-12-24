@@ -1,4 +1,4 @@
-// 1.21.4	-999999999-01-01T00:00:00	MC Course/Model Definitions
+// 1.21.4	-999999999-01-01T00:00:00	MC Course/MC Course Model Provider
 a0401ca0ba6da50731983384cf0cd735e1d0b11e assets/mccourse/blockstates/deepslate_fluorite_ore.json
 d0b747a75c0823c6f7b95695ea6c225c11225230 assets/mccourse/blockstates/end_fluorite_ore.json
 3f4c691525311c8cb54c14e4fb9676a449183eb1 assets/mccourse/blockstates/fluorite_block.json
@@ -43,6 +43,7 @@ d69865e60b3a5e832c1b0fa6ae38c75872810d56 assets/mccourse/items/fluorite_stairs.j
 d3ea313bceb60938742ff8e479b7dcc364665e44 assets/mccourse/items/fluorite_sword.json
 525b17e6d38efefd270bf2dbca737e6a2849b788 assets/mccourse/items/fluorite_trapdoor.json
 bdf0ae2001dfdc0cbe871a3bfd5f756d0ce31bf7 assets/mccourse/items/fluorite_wall.json
+77dc7cd5857c12258c15c486649546ccde4a2843 assets/mccourse/items/kaupen_armor_trim_smithing_template.json
 38fc1bc8deb0585dbdc21778a13cd7c9651235c8 assets/mccourse/items/lucky_block.json
 8031b00b8d674fd205dd57f852891403b5350262 assets/mccourse/items/magic_block.json
 c9543e54291fe9e702021d390152590d4cacb843 assets/mccourse/items/nether_fluorite_ore.json
@@ -148,6 +149,7 @@ e3c5fd79e773bb83f9929c33a5b7e803d88ff9a9 assets/mccourse/models/item/fluorite_pa
 5e4d2844335038e63e04b0919d650acbf9332fdd assets/mccourse/models/item/fluorite_pickaxe.json
 ffecf2734ff0a64ed0ed215212f8f169b519e72d assets/mccourse/models/item/fluorite_shovel.json
 69842044216127d8968a68452384b18f128fcefe assets/mccourse/models/item/fluorite_sword.json
+0ba45fa0b9fa861a6995c3a85d8bc1c786ed1fa6 assets/mccourse/models/item/kaupen_armor_trim_smithing_template.json
 1c86b3ae324e2b38a13ec0792def9fce389b23a6 assets/mccourse/models/item/raw_fluorite.json
 2e733bdf4b43492d575670609456874dc6f97f75 assets/mccourse/models/item/starlight_ashes.json
 6a5be8a221535942104c2d9d78c35d466a868213 assets/mccourse/models/item/strawberry.json

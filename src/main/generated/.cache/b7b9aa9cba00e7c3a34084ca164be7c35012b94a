@@ -1,4 +1,4 @@
-// 1.21.4	-999999999-01-01T00:00:00	MC Course/
+// 1.21.4	-999999999-01-01T00:00:00	MC Course/MC Course Recipe Provider
 db04106c86c58b7052a7a53066e8e0cbc4cbce85 data/mccourse/advancement/recipes/building_blocks/fluorite.json
 a47ecc7a66312b9064c2e88d4fed83dad5fed795 data/mccourse/advancement/recipes/building_blocks/fluorite_slab.json
 79b3c49a9773e8d64c84a13840601591a59efa4d data/mccourse/advancement/recipes/building_blocks/fluorite_stairs.json
@@ -15,6 +15,7 @@ f428e2ffd54af7218d1047a9d4d12c21a9d725fd data/mccourse/advancement/recipes/misc/
 bce8929307461541426ef2a01db62f7bd524897c data/mccourse/advancement/recipes/misc/fluorite_from_smelting_fluorite_ore.json
 5a0028e44ecc2bdd12cdb10e5812adbccd32ad6c data/mccourse/advancement/recipes/misc/fluorite_from_smelting_nether_fluorite_ore.json
 84b1d475ef5697b8dba01a4d2d5941a1e85d936b data/mccourse/advancement/recipes/misc/fluorite_from_smelting_raw_fluorite.json
+d3391c9fa573002953776b7f4f1d5dcf5a4ef4f4 data/mccourse/advancement/recipes/misc/kaupen.json
 4efbfe9fc10a082940ff8ebd0024880a828d715b data/mccourse/advancement/recipes/misc/raw_fluorite.json
 3750b9c52581d4a82bb0628ec7d0914c5c903e7e data/mccourse/advancement/recipes/redstone/fluorite_button.json
 cc262fc26320758c5aa4f4ae60a435bc7b2bbadf data/mccourse/advancement/recipes/redstone/fluorite_door.json
@@ -42,4 +43,5 @@ a3c095404453052922df20aabb8209676899e7d2 data/mccourse/recipe/fluorite_from_blas
 2b2a1d897a556f7a6496fc7fb5cc4dcb91328d46 data/mccourse/recipe/fluorite_stairs.json
 7910c6ea0655d9fe2db87e98f965539fccde6537 data/mccourse/recipe/fluorite_trapdoor.json
 5fce6464c10c6c0225e20e2432150656436086d7 data/mccourse/recipe/fluorite_wall.json
+ec76410e3e02c93db5ce806f3cdcc79a8a563d2a data/mccourse/recipe/kaupen.json
 80628e05720c82b6f6d592d046be24e1be328357 data/mccourse/recipe/raw_fluorite.json

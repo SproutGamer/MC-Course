@@ -30,6 +30,14 @@ class ModItemTagProvider(output: FabricDataOutput, completableFuture: Completabl
             .add(ModItems.FLUORITE_LEGGINGS)
         getOrCreateTagBuilder(ItemTags.FOOT_ARMOR)
             .add(ModItems.FLUORITE_BOOTS)
+
+        getOrCreateTagBuilder(ItemTags.TRIM_MATERIALS)
+            .add(ModItems.FLUORITE)
+
+    }
+
+    override fun getName(): String {
+        return "MC Course Item Tag Provider"
     }
 
 }

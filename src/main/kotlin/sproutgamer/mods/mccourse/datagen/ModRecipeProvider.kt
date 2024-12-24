@@ -10,8 +10,12 @@ import net.minecraft.data.recipe.ShapelessRecipeJsonBuilder
 import net.minecraft.item.ItemConvertible
 import net.minecraft.recipe.Ingredient
 import net.minecraft.recipe.book.RecipeCategory
+import net.minecraft.registry.RegistryKey
+import net.minecraft.registry.RegistryKeys
 import net.minecraft.registry.RegistryWrapper
 import net.minecraft.registry.RegistryWrapper.WrapperLookup
+import net.minecraft.util.Identifier
+import sproutgamer.mods.mccourse.MCCourse
 import sproutgamer.mods.mccourse.block.ModBlocks
 import sproutgamer.mods.mccourse.item.ModItems
 import java.util.concurrent.CompletableFuture
@@ -20,7 +24,7 @@ class ModRecipeProvider(output: FabricDataOutput?,
                         registriesFuture: CompletableFuture<RegistryWrapper.WrapperLookup>?) : FabricRecipeProvider(output, registriesFuture) {
 
     override fun getName(): String {
-        return ""
+        return "MC Course Recipe Provider"
     }
 
     override fun getRecipeGenerator(wrapperLookup: WrapperLookup, exporter: RecipeExporter?): RecipeGenerator {
@@ -66,6 +70,8 @@ class ModRecipeProvider(output: FabricDataOutput?,
                     .criterion(hasItem(Blocks.STONE), conditionsFromItem(Blocks.STONE))
                     .criterion(hasItem(ModItems.FLUORITE), conditionsFromItem(ModItems.FLUORITE))
                     .offerTo(exporter)
+
+                offerSmithingTrimRecipe(ModItems.KAUPEN_SMITHING_TEMPLATE, RegistryKey.of(RegistryKeys.RECIPE, Identifier.of(MCCourse.MOD_ID, "kaupen")))
             }
 
             private fun offerStairsRecipe(output: ItemConvertible?, input: ItemConvertible?) {
