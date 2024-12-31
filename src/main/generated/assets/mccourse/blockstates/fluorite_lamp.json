@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "mccourse:block/fluorite_lamp"
+    },
+    "lit=true": {
+      "model": "mccourse:block/fluorite_lamp_on"
+    }
+  }
+}

@@ -1,11 +1,7 @@
 package sproutgamer.mods.mccourse.block
 
 import net.minecraft.block.*
-import net.minecraft.item.BlockItem
-import net.minecraft.item.Item
 import net.minecraft.item.Items
-import net.minecraft.registry.Registries
-import net.minecraft.registry.Registry
 import net.minecraft.registry.RegistryKey
 import net.minecraft.registry.RegistryKeys
 import net.minecraft.sound.BlockSoundGroup
@@ -13,6 +9,7 @@ import net.minecraft.util.Identifier
 import net.minecraft.util.math.intprovider.UniformIntProvider
 import org.slf4j.Logger
 import sproutgamer.mods.mccourse.MCCourse
+import sproutgamer.mods.mccourse.block.type.FluoriteLampBlock
 import sproutgamer.mods.mccourse.block.type.LuckyBlock
 import sproutgamer.mods.mccourse.block.type.MagicBlock
 
@@ -67,6 +64,9 @@ class ModBlocks {
                 .requiresTool().nonOpaque())
 
         val LUCKY_BLOCK = registerBlock("lucky_block", ::LuckyBlock, AbstractBlock.Settings.copy(Blocks.GLASS))
+
+        val FLUORITE_LAMP = registerBlock("fluorite_lamp", ::FluoriteLampBlock, AbstractBlock.Settings.create()
+            .strength(1f).requiresTool().luminance { state -> state[FluoriteLampBlock.LUMINANCE] })
 
 
         private fun registerBlock(path: String, factory: (AbstractBlock.Settings) -> Block, settings: AbstractBlock.Settings): Block {

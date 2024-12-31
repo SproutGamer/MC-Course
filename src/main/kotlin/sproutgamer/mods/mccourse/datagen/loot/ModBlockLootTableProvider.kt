@@ -39,6 +39,8 @@ class ModBlockLootTableProvider(dataOutput: FabricDataOutput?,
         addDrop(ModBlocks.FLUORITE_DOOR, doorDrops(ModBlocks.FLUORITE_DOOR))
         addDrop(ModBlocks.FLUORITE_TRAPDOOR)
 
+        addDrop(ModBlocks.FLUORITE_LAMP)
+
     }
 
     private fun variableOreDrops(drop: Block?, item: Item, minDrops: Float, maxDrops: Float): LootTable.Builder {
@@ -52,5 +54,9 @@ class ModBlockLootTableProvider(dataOutput: FabricDataOutput?,
                     .apply(ApplyBonusLootFunction.oreDrops(impl.getOrThrow(Enchantments.FORTUNE)))
             ) as LootPoolEntry.Builder<*>
         )
+    }
+
+    override fun getName(): String {
+        return "MC Course Block Loot Table Provider"
     }
 }

@@ -2,17 +2,10 @@ package sproutgamer.mods.mccourse.datagen
 
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
-import net.minecraft.client.data.BlockStateModelGenerator
-import net.minecraft.client.data.ItemModelGenerator
-import net.minecraft.client.data.Models
-import net.minecraft.client.render.entity.equipment.EquipmentModel
-import net.minecraft.entity.EquipmentSlot
+import net.minecraft.client.data.*
 import net.minecraft.item.Items
-import net.minecraft.item.equipment.EquipmentAssetKeys
-import net.minecraft.item.equipment.EquipmentType
-import net.minecraft.util.Identifier
-import sproutgamer.mods.mccourse.MCCourse
 import sproutgamer.mods.mccourse.block.ModBlocks
+import sproutgamer.mods.mccourse.block.type.FluoriteLampBlock
 import sproutgamer.mods.mccourse.equipment.ModEquipmentAssetKeys
 import sproutgamer.mods.mccourse.item.ModItems
 
@@ -41,6 +34,12 @@ class ModModelProvider(output: FabricDataOutput?) : FabricModelProvider(output) 
             blockStateModelGenerator.registerTrapdoor(ModBlocks.FLUORITE_TRAPDOOR)
 
             blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LUCKY_BLOCK)
+
+            val lampOffId = TexturedModel.CUBE_ALL.upload(ModBlocks.FLUORITE_LAMP, blockStateModelGenerator.modelCollector)
+            val lampOnId = blockStateModelGenerator.createSubModel(ModBlocks.FLUORITE_LAMP, "_on", Models.CUBE_ALL, TextureMap::all)
+
+            blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.FLUORITE_LAMP)
+                .coordinate(BlockStateModelGenerator.createBooleanModelMap(FluoriteLampBlock.LIT, lampOnId, lampOffId)))
         }
     }
 
