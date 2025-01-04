@@ -5,15 +5,12 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider
 import net.minecraft.block.Blocks
 import net.minecraft.data.recipe.RecipeExporter
 import net.minecraft.data.recipe.RecipeGenerator
-import net.minecraft.data.recipe.ShapedRecipeJsonBuilder
-import net.minecraft.data.recipe.ShapelessRecipeJsonBuilder
 import net.minecraft.item.ItemConvertible
 import net.minecraft.recipe.Ingredient
 import net.minecraft.recipe.book.RecipeCategory
 import net.minecraft.registry.RegistryKey
 import net.minecraft.registry.RegistryKeys
 import net.minecraft.registry.RegistryWrapper
-import net.minecraft.registry.RegistryWrapper.WrapperLookup
 import net.minecraft.util.Identifier
 import sproutgamer.mods.mccourse.MCCourse
 import sproutgamer.mods.mccourse.block.ModBlocks
@@ -27,7 +24,7 @@ class ModRecipeProvider(output: FabricDataOutput?,
         return "MC Course Recipe Provider"
     }
 
-    override fun getRecipeGenerator(wrapperLookup: WrapperLookup, exporter: RecipeExporter?): RecipeGenerator {
+    override fun getRecipeGenerator(wrapperLookup: RegistryWrapper.WrapperLookup, exporter: RecipeExporter?): RecipeGenerator {
         return object : RecipeGenerator(wrapperLookup, exporter) {
             override fun generate() {
                 val fluoriteSmeltables = listOf(ModItems.RAW_FLUORITE, ModBlocks.FLUORITE_ORE,
@@ -71,7 +68,7 @@ class ModRecipeProvider(output: FabricDataOutput?,
                     .criterion(hasItem(ModItems.FLUORITE), conditionsFromItem(ModItems.FLUORITE))
                     .offerTo(exporter)
 
-                offerSmithingTrimRecipe(ModItems.KAUPEN_SMITHING_TEMPLATE, RegistryKey.of(RegistryKeys.RECIPE, Identifier.of(MCCourse.MOD_ID, "kaupen")))
+                offerSmithingTrimRecipe(ModItems.KAUPEN_SMITHING_TEMPLATE, RegistryKey.of(RegistryKeys.RECIPE, Identifier.of(MCCourse.ID, "kaupen")))
             }
 
             private fun offerStairsRecipe(output: ItemConvertible?, input: ItemConvertible?) {

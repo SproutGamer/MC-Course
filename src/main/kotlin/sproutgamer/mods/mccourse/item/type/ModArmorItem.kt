@@ -1,17 +1,13 @@
 package sproutgamer.mods.mccourse.item.type
 
-import net.fabricmc.fabric.api.client.rendering.v1.ArmorRenderer
 import net.minecraft.component.DataComponentTypes
 import net.minecraft.entity.Entity
-import net.minecraft.entity.EntityType
-import net.minecraft.entity.effect.StatusEffect
 import net.minecraft.entity.effect.StatusEffectInstance
 import net.minecraft.entity.effect.StatusEffects
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.item.ArmorItem
 import net.minecraft.item.ItemStack
 import net.minecraft.item.equipment.ArmorMaterial
-import net.minecraft.item.equipment.ArmorMaterials
 import net.minecraft.item.equipment.EquipmentType
 import net.minecraft.world.World
 import sproutgamer.mods.mccourse.item.ModArmorMaterials
@@ -43,7 +39,7 @@ class ModArmorItem(material: ArmorMaterial?, type: EquipmentType?, settings: Set
             val statusEffects = entry.value
 
             if (hasCorrectArmorOn(armorMaterial, player)) {
-                addStatusEffectForMaterial(player, armorMaterial, statusEffects)
+                addStatusEffectForMaterial(player, statusEffects)
             }
         }
     }
@@ -80,7 +76,7 @@ class ModArmorItem(material: ArmorMaterial?, type: EquipmentType?, settings: Set
                 helmetComponent.assetId.get() == material.assetId
     }
 
-    private fun addStatusEffectForMaterial(player: PlayerEntity, material: ArmorMaterial, effects: List<StatusEffectInstance>) {
+    private fun addStatusEffectForMaterial(player: PlayerEntity, effects: List<StatusEffectInstance>) {
         val playerHasEffect = effects.stream().allMatch { statusEffect -> player.hasStatusEffect(statusEffect.effectType) }
 
         if (!playerHasEffect) {

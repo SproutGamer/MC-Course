@@ -2,6 +2,8 @@ package sproutgamer.mods.mccourse.datagen.tag
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider
+import net.minecraft.block.Block
+import net.minecraft.registry.RegistryKeys
 import net.minecraft.registry.RegistryWrapper
 import net.minecraft.registry.tag.BlockTags
 import sproutgamer.mods.mccourse.block.ModBlocks
@@ -9,7 +11,8 @@ import sproutgamer.mods.mccourse.tag.ModTags
 import java.util.concurrent.CompletableFuture
 
 class ModBlockTagProvider(output: FabricDataOutput?,
-                          registriesFuture: CompletableFuture<RegistryWrapper.WrapperLookup>?) : FabricTagProvider.BlockTagProvider(output, registriesFuture) {
+                          registriesFuture: CompletableFuture<RegistryWrapper.WrapperLookup>?
+) : FabricTagProvider<Block>(output, RegistryKeys.BLOCK, registriesFuture) {
 
     override fun configure(wrapperLookup: RegistryWrapper.WrapperLookup?) {
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
@@ -43,6 +46,22 @@ class ModBlockTagProvider(output: FabricDataOutput?,
             .forceAddTag(BlockTags.PICKAXE_MINEABLE)
             .forceAddTag(BlockTags.AXE_MINEABLE)
             .forceAddTag(BlockTags.SHOVEL_MINEABLE)
+
+        getOrCreateTagBuilder(ModTags.Blocks.ORES)
+            .forceAddTag(BlockTags.COAL_ORES)
+            .forceAddTag(BlockTags.GOLD_ORES)
+            .forceAddTag(BlockTags.LAPIS_ORES)
+            .forceAddTag(BlockTags.COPPER_ORES)
+            .forceAddTag(BlockTags.IRON_ORES)
+            .forceAddTag(BlockTags.EMERALD_ORES)
+            .forceAddTag(BlockTags.REDSTONE_ORES)
+            .forceAddTag(BlockTags.DIAMOND_ORES)
+            .add(
+                ModBlocks.FLUORITE_ORE,
+                ModBlocks.DEEPSLATE_FLUORITE_ORE,
+                ModBlocks.NETHER_FLUORITE_ORE,
+                ModBlocks.END_FLUORITE_ORE,
+            )
     }
 
     override fun getName(): String {

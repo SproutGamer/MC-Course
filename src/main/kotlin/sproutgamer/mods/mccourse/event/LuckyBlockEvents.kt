@@ -23,11 +23,12 @@ import net.minecraft.world.World
 import sproutgamer.mods.mccourse.block.ModBlocks
 import sproutgamer.mods.mccourse.item.ModItems
 import sproutgamer.mods.mccourse.util.ModUtils
+import kotlin.random.Random
 
 class LuckyBlockEvents(private val world: World, private val player: PlayerEntity, private val pos: BlockPos) {
 
     fun triggerRandomEvent() {
-        when (5) {
+        when (Random.nextInt(12)) {
             0 -> jumpingPotion()
             1 -> stickOfJustice()
             2 -> superPickaxe()

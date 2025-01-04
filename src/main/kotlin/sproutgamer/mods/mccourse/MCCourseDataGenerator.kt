@@ -7,6 +7,7 @@ import net.minecraft.registry.RegistryKeys
 import sproutgamer.mods.mccourse.datagen.ModModelProvider
 import sproutgamer.mods.mccourse.datagen.ModRecipeProvider
 import sproutgamer.mods.mccourse.datagen.ModRegistryDataProvider
+import sproutgamer.mods.mccourse.datagen.lang.ModEnglishLanguageProvider
 import sproutgamer.mods.mccourse.datagen.loot.ModBlockLootTableProvider
 import sproutgamer.mods.mccourse.datagen.tag.ModBlockTagProvider
 import sproutgamer.mods.mccourse.datagen.tag.ModItemTagProvider
@@ -23,6 +24,7 @@ object MCCourseDataGenerator : DataGeneratorEntrypoint {
 		pack.addProvider(::ModModelProvider)
 		pack.addProvider(::ModRecipeProvider)
 		pack.addProvider(::ModRegistryDataProvider)
+		pack.addProvider(::ModEnglishLanguageProvider)
 	}
 
 	override fun buildRegistry(registryBuilder: RegistryBuilder?) {

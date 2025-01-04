@@ -12,24 +12,22 @@ import net.minecraft.util.Util
 import sproutgamer.mods.mccourse.MCCourse
 import sproutgamer.mods.mccourse.item.ModItems
 
-class ModTrimPatterns {
+object ModTrimPatterns {
 
-    companion object {
+    val KAUPEN: RegistryKey<ArmorTrimPattern> = RegistryKey.of(RegistryKeys.TRIM_PATTERN, Identifier.of(MCCourse.ID, "kaupen"))
 
-        val KAUPEN = RegistryKey.of(RegistryKeys.TRIM_PATTERN, Identifier.of(MCCourse.MOD_ID, "kaupen"))
+    fun bootstrap(context: Registerable<ArmorTrimPattern>) {
+        register(context, ModItems.KAUPEN_SMITHING_TEMPLATE, KAUPEN)
+    }
 
-        fun bootstrap(context: Registerable<ArmorTrimPattern>) {
-            register(context, ModItems.KAUPEN_SMITHING_TEMPLATE, KAUPEN)
-        }
+    private fun register(context: Registerable<ArmorTrimPattern>, item: Item, key: RegistryKey<ArmorTrimPattern>) {
 
-        private fun register(context: Registerable<ArmorTrimPattern>, item: Item, key: RegistryKey<ArmorTrimPattern>) {
+        val trimPattern = ArmorTrimPattern(
+            key.value, Registries.ITEM.getEntry(item),
+            Text.translatable(Util.createTranslationKey("trim_pattern", key.value)), false
+        )
 
-            val trimPattern = ArmorTrimPattern(key.value, Registries.ITEM.getEntry(item),
-                Text.translatable(Util.createTranslationKey("trim_pattern", key.value)), false)
-
-            context.register(key, trimPattern)
-
-        }
+        context.register(key, trimPattern)
 
     }
 

@@ -14,29 +14,29 @@ import net.minecraft.util.Util
 import sproutgamer.mods.mccourse.MCCourse
 import sproutgamer.mods.mccourse.item.ModItems
 
-class ModTrimMaterials {
+object ModTrimMaterials {
 
-    companion object {
+    val FLUORITE: RegistryKey<ArmorTrimMaterial> = RegistryKey.of(
+        RegistryKeys.TRIM_MATERIAL,
+        Identifier.of(MCCourse.ID, "fluorite")
+    )
 
-        val FLUORITE: RegistryKey<ArmorTrimMaterial> = RegistryKey.of(RegistryKeys.TRIM_MATERIAL,
-            Identifier.of(MCCourse.MOD_ID, "fluorite"))
+    fun bootstrap(registerable: Registerable<ArmorTrimMaterial>) {
+        register(registerable, FLUORITE, Registries.ITEM.getEntry(ModItems.FLUORITE), Style.EMPTY.withColor(0xB03FE0))
+    }
 
-        fun bootstrap(registerable: Registerable<ArmorTrimMaterial>) {
-            register(registerable, FLUORITE, Registries.ITEM.getEntry(ModItems.FLUORITE), Style.EMPTY.withColor(0xB03FE0))
-        }
+    private fun register(
+        registerable: Registerable<ArmorTrimMaterial>, armorTrimKey: RegistryKey<ArmorTrimMaterial>,
+        item: RegistryEntry<Item>, style: Style
+    ) {
 
-        private fun register(
-            registerable: Registerable<ArmorTrimMaterial>, armorTrimKey: RegistryKey<ArmorTrimMaterial>,
-            item: RegistryEntry<Item>, style: Style
-        ) {
-
-            val trimMaterial = ArmorTrimMaterial(armorTrimKey.value.path, item, mapOf(), Text.translatable(
+        val trimMaterial = ArmorTrimMaterial(
+            armorTrimKey.value.path, item, mapOf(), Text.translatable(
                 Util.createTranslationKey("trim_material", armorTrimKey.value)
-            ).fillStyle(style))
+            ).fillStyle(style)
+        )
 
-            registerable.register(armorTrimKey, trimMaterial)
-
-        }
+        registerable.register(armorTrimKey, trimMaterial)
 
     }
 

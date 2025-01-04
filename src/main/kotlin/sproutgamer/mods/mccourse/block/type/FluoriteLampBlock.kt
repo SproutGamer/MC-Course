@@ -9,8 +9,6 @@ import net.minecraft.state.property.IntProperty
 import net.minecraft.util.ActionResult
 import net.minecraft.util.hit.BlockHitResult
 import net.minecraft.util.math.BlockPos
-import net.minecraft.util.math.Direction
-import net.minecraft.world.BlockView
 import net.minecraft.world.World
 
 class FluoriteLampBlock(settings: Settings?) : Block(settings) {

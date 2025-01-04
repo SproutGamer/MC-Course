@@ -7,29 +7,26 @@ import net.minecraft.registry.tag.TagKey
 import net.minecraft.util.Identifier
 import sproutgamer.mods.mccourse.MCCourse
 
-class ModTags {
-    class Blocks {
-        companion object {
-            val NEEDS_FLUORITE_TOOL = createTag("needs_fluorite_tool")
-            val INCORRECT_FOR_FLUORITE_TOOL = createTag("incorrect_for_fluorite_tool")
+object ModTags {
+    object Blocks {
+        val INCORRECT_FOR_FLUORITE_TOOL = createTag("incorrect_for_fluorite_tool")
 
-            val PAXEL_MINEABLE = createTag("paxel_mineable")
+        val ORES = createTag("ores")
 
-            private fun createTag(name: String): TagKey<Block> {
-                return TagKey.of(RegistryKeys.BLOCK, Identifier.of(MCCourse.MOD_ID, name))
-            }
+        val PAXEL_MINEABLE = createTag("paxel_mineable")
+
+        private fun createTag(name: String): TagKey<Block> {
+            return TagKey.of(RegistryKeys.BLOCK, Identifier.of(MCCourse.ID, name))
         }
     }
 
-    class Items {
-        companion object {
-            val TRANSFORMABLE_ITEMS = createTag("transformable_items")
-            val FLUORITE_REPAIR = createTag("fluorite_repair")
+    object Items {
+        val TRANSFORMABLE_ITEMS = createTag("transformable_items")
+        val FLUORITE_REPAIR = createTag("fluorite_repair")
 
 
-            private fun createTag(name: String): TagKey<Item> {
-                return TagKey.of(RegistryKeys.ITEM, Identifier.of(MCCourse.MOD_ID, name))
-            }
+        private fun createTag(name: String): TagKey<Item> {
+            return TagKey.of(RegistryKeys.ITEM, Identifier.of(MCCourse.ID, name))
         }
     }
 }

@@ -13,73 +13,114 @@ import sproutgamer.mods.mccourse.block.type.FluoriteLampBlock
 import sproutgamer.mods.mccourse.block.type.LuckyBlock
 import sproutgamer.mods.mccourse.block.type.MagicBlock
 
-class ModBlocks {
-    companion object {
-        val FLUORITE_BLOCK = registerBlock("fluorite_block", ::Block, AbstractBlock.Settings.create()
+object ModBlocks {
+    val FLUORITE_BLOCK = registerBlock(
+        "fluorite_block", ::Block, AbstractBlock.Settings.create()
             .sounds(BlockSoundGroup.AMETHYST_BLOCK)
             .strength(4f)
-            .requiresTool())
+            .requiresTool()
+    )
 
-        val FLUORITE_ORE = registerBlock("fluorite_ore", { settings -> ExperienceDroppingBlock(UniformIntProvider.create(2, 4), settings) }, AbstractBlock.Settings.create()
+    val FLUORITE_ORE = registerBlock(
+        "fluorite_ore",
+        { settings -> ExperienceDroppingBlock(UniformIntProvider.create(2, 4), settings) },
+        AbstractBlock.Settings.create()
             .strength(4f)
-            .requiresTool())
-        val DEEPSLATE_FLUORITE_ORE = registerBlock("deepslate_fluorite_ore",
-            { settings -> ExperienceDroppingBlock(UniformIntProvider.create(2, 4), settings) }, AbstractBlock.Settings.create()
+            .requiresTool()
+    )
+    val DEEPSLATE_FLUORITE_ORE = registerBlock(
+        "deepslate_fluorite_ore",
+        { settings -> ExperienceDroppingBlock(UniformIntProvider.create(2, 4), settings) },
+        AbstractBlock.Settings.create()
             .strength(6f)
-            .requiresTool())
-        val NETHER_FLUORITE_ORE = registerBlock("nether_fluorite_ore", { settings -> ExperienceDroppingBlock(UniformIntProvider.create(2, 4),
-            settings) }, AbstractBlock.Settings.copy(DEEPSLATE_FLUORITE_ORE))
-        val END_FLUORITE_ORE = registerBlock("end_fluorite_ore", { settings -> ExperienceDroppingBlock(UniformIntProvider.create(2, 4),
-            settings) }, AbstractBlock.Settings.copy(DEEPSLATE_FLUORITE_ORE))
+            .requiresTool()
+    )
+    val NETHER_FLUORITE_ORE = registerBlock("nether_fluorite_ore", { settings ->
+        ExperienceDroppingBlock(
+            UniformIntProvider.create(2, 4),
+            settings
+        )
+    }, AbstractBlock.Settings.copy(DEEPSLATE_FLUORITE_ORE))
+    val END_FLUORITE_ORE = registerBlock("end_fluorite_ore", { settings ->
+        ExperienceDroppingBlock(
+            UniformIntProvider.create(2, 4),
+            settings
+        )
+    }, AbstractBlock.Settings.copy(DEEPSLATE_FLUORITE_ORE))
 
-        val MAGIC_BLOCK = registerBlock("magic_block", ::MagicBlock, AbstractBlock.Settings.copy(Blocks.AMETHYST_BLOCK))
+    val MAGIC_BLOCK = registerBlock("magic_block", ::MagicBlock, AbstractBlock.Settings.copy(Blocks.AMETHYST_BLOCK))
 
-        val FLUORITE_STAIRS = registerBlock("fluorite_stairs", { settings -> StairsBlock(
-            FLUORITE_BLOCK.defaultState, settings) }, AbstractBlock.Settings.create()
+    val FLUORITE_STAIRS = registerBlock(
+        "fluorite_stairs", { settings ->
+            StairsBlock(
+                FLUORITE_BLOCK.defaultState, settings
+            )
+        }, AbstractBlock.Settings.create()
             .strength(2f)
-            .requiresTool())
-        val FLUORITE_SLAB = registerBlock("fluorite_slab", ::SlabBlock, AbstractBlock.Settings.create()
+            .requiresTool()
+    )
+    val FLUORITE_SLAB = registerBlock(
+        "fluorite_slab", ::SlabBlock, AbstractBlock.Settings.create()
             .strength(2f)
-            .requiresTool())
-        val FLUORITE_BUTTON = registerBlock("fluorite_button", { settings -> ButtonBlock(BlockSetType.IRON, 10, settings)},
-            AbstractBlock.Settings.create().strength(2f)
-                .requiresTool())
-        val FLUORITE_PRESSURE_PLATE = registerBlock("fluorite_pressure_plate", { settings -> PressurePlateBlock(BlockSetType.IRON, settings) },
-            AbstractBlock.Settings.create().strength(2f)
-                .requiresTool())
-        val FLUORITE_FENCE = registerBlock("fluorite_fence", ::FenceBlock,
-            AbstractBlock.Settings.create().strength(2f)
-                .requiresTool())
-        val FLUORITE_FENCE_GATE = registerBlock("fluorite_fence_gate", { settings -> FenceGateBlock(WoodType.ACACIA, settings) },
-            AbstractBlock.Settings.create().strength(2f)
-                .requiresTool())
-        val FLUORITE_WALL = registerBlock("fluorite_wall", ::WallBlock,
-            AbstractBlock.Settings.create().strength(2f)
-                .requiresTool())
-        val FLUORITE_DOOR = registerBlock("fluorite_door", { settings -> DoorBlock(BlockSetType.IRON, settings) },
-            AbstractBlock.Settings.create().strength(2f)
-                .requiresTool().nonOpaque())
-        val FLUORITE_TRAPDOOR = registerBlock("fluorite_trapdoor", { settings -> TrapdoorBlock(BlockSetType.IRON, settings) },
-            AbstractBlock.Settings.create().strength(2f)
-                .requiresTool().nonOpaque())
+            .requiresTool()
+    )
+    val FLUORITE_BUTTON = registerBlock(
+        "fluorite_button", { settings -> ButtonBlock(BlockSetType.IRON, 10, settings) },
+        AbstractBlock.Settings.create().strength(2f)
+            .requiresTool()
+    )
+    val FLUORITE_PRESSURE_PLATE = registerBlock(
+        "fluorite_pressure_plate", { settings -> PressurePlateBlock(BlockSetType.IRON, settings) },
+        AbstractBlock.Settings.create().strength(2f)
+            .requiresTool()
+    )
+    val FLUORITE_FENCE = registerBlock(
+        "fluorite_fence", ::FenceBlock,
+        AbstractBlock.Settings.create().strength(2f)
+            .requiresTool()
+    )
+    val FLUORITE_FENCE_GATE = registerBlock(
+        "fluorite_fence_gate", { settings -> FenceGateBlock(WoodType.ACACIA, settings) },
+        AbstractBlock.Settings.create().strength(2f)
+            .requiresTool()
+    )
+    val FLUORITE_WALL = registerBlock(
+        "fluorite_wall", ::WallBlock,
+        AbstractBlock.Settings.create().strength(2f)
+            .requiresTool()
+    )
+    val FLUORITE_DOOR = registerBlock(
+        "fluorite_door", { settings -> DoorBlock(BlockSetType.IRON, settings) },
+        AbstractBlock.Settings.create().strength(2f)
+            .requiresTool().nonOpaque()
+    )
+    val FLUORITE_TRAPDOOR = registerBlock(
+        "fluorite_trapdoor", { settings -> TrapdoorBlock(BlockSetType.IRON, settings) },
+        AbstractBlock.Settings.create().strength(2f)
+            .requiresTool().nonOpaque()
+    )
 
-        val LUCKY_BLOCK = registerBlock("lucky_block", ::LuckyBlock, AbstractBlock.Settings.copy(Blocks.GLASS))
+    val LUCKY_BLOCK = registerBlock("lucky_block", ::LuckyBlock, AbstractBlock.Settings.copy(Blocks.GLASS))
 
-        val FLUORITE_LAMP = registerBlock("fluorite_lamp", ::FluoriteLampBlock, AbstractBlock.Settings.create()
+    val FLUORITE_LAMP = registerBlock(
+        "fluorite_lamp", ::FluoriteLampBlock, AbstractBlock.Settings.create()
             .strength(1f).requiresTool().luminance { state -> state[FluoriteLampBlock.LUMINANCE] })
 
 
-        private fun registerBlock(path: String, factory: (AbstractBlock.Settings) -> Block, settings: AbstractBlock.Settings): Block {
-            val id = Identifier.of(MCCourse.MOD_ID, path)
-            val registryKey = RegistryKey.of(RegistryKeys.BLOCK, id)
+    private fun registerBlock(
+        path: String,
+        factory: (AbstractBlock.Settings) -> Block,
+        settings: AbstractBlock.Settings
+    ): Block {
+        val id = Identifier.of(MCCourse.ID, path)
+        val registryKey = RegistryKey.of(RegistryKeys.BLOCK, id)
 
-            val block = Blocks.register(registryKey, factory, settings)
-            Items.register(block)
-            return block
-        }
+        val block = Blocks.register(registryKey, factory, settings)
+        Items.register(block)
+        return block
+    }
 
-        fun initialize(logger: Logger) {
-            logger.info("Initializing Blocks...")
-        }
+    fun initialize(logger: Logger) {
+        logger.info("Initializing Blocks...")
     }
 }
