@@ -71,6 +71,7 @@ class ModEnglishLanguageProvider(
             add(ModItems.METAL_DETECTOR, "Metal Detector")
             add(ModItems.METAL_DETECTOR.translationKey + ".no_valuables", "No Valuables Found!")
             add(ModItems.METAL_DETECTOR.translationKey + ".valuable_found", "Found Valuable %s at (%s, %s, %s)")
+            add(ModItems.DATA_TABLET, "Data Tablet")
 
             addTrimMaterial(ModTrimMaterials.FLUORITE, "Fluorite Material", this)
             addTrimPattern(ModTrimPatterns.KAUPEN, "Kaupen Armor Pattern", this)

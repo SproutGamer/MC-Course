@@ -58,6 +58,7 @@ class MetalDetectorItem(settings: Settings?) : Item(settings) {
 
         val data = FoundBlockData(block.defaultState, pos)
         dataTablet[ModDataComponentTypes.FOUND_BLOCK] = data
+        dataTablet[ModDataComponentTypes.ON] = true
 
     }
 

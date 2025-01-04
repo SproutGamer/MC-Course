@@ -4,10 +4,13 @@ import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.item.Item
 import net.minecraft.item.ItemStack
 import net.minecraft.item.tooltip.TooltipType
+import net.minecraft.state.property.BooleanProperty
+import net.minecraft.state.property.Properties
 import net.minecraft.text.Text
 import net.minecraft.util.ActionResult
 import net.minecraft.util.Hand
 import net.minecraft.world.World
+import sproutgamer.mods.mccourse.block.type.FluoriteLampBlock
 import sproutgamer.mods.mccourse.component.ModDataComponentTypes
 
 class DataTabletItem(settings: Settings) : Item(settings) {
@@ -16,6 +19,7 @@ class DataTabletItem(settings: Settings) : Item(settings) {
         val stack = user!!.getStackInHand(hand)
         if (stack[ModDataComponentTypes.FOUND_BLOCK] != null) {
             stack.remove(ModDataComponentTypes.FOUND_BLOCK)
+            stack[ModDataComponentTypes.ON] = false
         }
 
         return ActionResult.SUCCESS

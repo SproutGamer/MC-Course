@@ -1,5 +1,6 @@
 package sproutgamer.mods.mccourse.component
 
+import com.mojang.serialization.Codec
 import net.minecraft.component.ComponentType
 import net.minecraft.registry.Registries
 import net.minecraft.registry.Registry
@@ -13,6 +14,8 @@ object ModDataComponentTypes {
 
     val COORDINATES = register("coordinates") { builder -> builder.codec(BlockPos.CODEC) }
     val FOUND_BLOCK = register("found_block") { builder -> builder.codec(FoundBlockData.CODEC) }
+
+    val ON = register("on") { builder -> builder.codec(Codec.BOOL) }
 
     private fun <T> register(
         path: String,

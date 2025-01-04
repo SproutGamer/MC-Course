@@ -16,7 +16,7 @@ import sproutgamer.mods.mccourse.item.ModItems
 
 object MCCourse : ModInitializer {
 	const val ID = "mccourse"
-	private val logger: Logger = LoggerFactory.getLogger("MC Course")
+	val logger: Logger = LoggerFactory.getLogger("MC Course")
 
 	override fun onInitialize() {
 
@@ -31,6 +31,8 @@ object MCCourse : ModInitializer {
 		FuelRegistryEvents.BUILD.register { builder, _ ->
 			builder.add(ModItems.STARLIGHT_ASHES, 600)
 		}
+
+
 
 		PlayerBlockBreakEvents.BEFORE.register(HammerUsageEvent())
 

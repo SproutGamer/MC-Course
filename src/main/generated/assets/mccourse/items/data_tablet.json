@@ -1,6 +1,14 @@
 {
   "model": {
-    "type": "minecraft:model",
-    "model": "mccourse:item/data_tablet"
+    "type": "minecraft:condition",
+    "on_false": {
+      "type": "minecraft:model",
+      "model": "mccourse:item/data_tablet_off"
+    },
+    "on_true": {
+      "type": "minecraft:model",
+      "model": "mccourse:item/data_tablet_on"
+    },
+    "property": "mccourse:on"
   }
 }
