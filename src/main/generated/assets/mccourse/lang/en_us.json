@@ -20,6 +20,7 @@
   "block.mccourse.lucky_block.event.9.dog": "Milo",
   "block.mccourse.magic_block": "Block of Magic",
   "block.mccourse.nether_fluorite_ore": "Nether Fluorite Ore",
+  "block.mccourse.strawberries": "Strawberry Crop",
   "component.mccourse.found_block_data.output_text": "%s at (%s, %s, %s)",
   "item.mccourse.chainsaw": "Chainsaw",
   "item.mccourse.chainsaw.coordinates": "Last Chopped Tree at %s",
@@ -40,6 +41,7 @@
   "item.mccourse.fluorite_pickaxe": "Fluorite Pickaxe",
   "item.mccourse.fluorite_shovel": "Fluorite Shovel",
   "item.mccourse.fluorite_sword": "Fluorite Sword",
+  "item.mccourse.kaupen_bow": "Kaupen Bow",
   "item.mccourse.metal_detector": "Metal Detector",
   "item.mccourse.metal_detector.no_valuables": "No Valuables Found!",
   "item.mccourse.metal_detector.valuable_found": "Found Valuable %s at (%s, %s, %s)",
@@ -47,6 +49,7 @@
   "item.mccourse.starlight_ashes": "Starlight Ashes",
   "item.mccourse.strawberry": "Strawberry",
   "item.mccourse.strawberry.tooltip": "Warning, may contain luck.",
+  "item.mccourse.strawberry_seeds": "Strawberry Seeds",
   "itemgroup.mccourse.fluorite": "Fluorite Group",
   "trim_material.mccourse.fluorite": "Fluorite Material",
   "trim_pattern.mccourse.kaupen": "Kaupen Armor Pattern"

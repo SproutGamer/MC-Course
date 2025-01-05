@@ -11,6 +11,7 @@ import net.minecraft.util.Identifier
 import net.minecraft.util.Rarity
 import org.slf4j.Logger
 import sproutgamer.mods.mccourse.MCCourse
+import sproutgamer.mods.mccourse.block.ModBlocks
 import sproutgamer.mods.mccourse.item.type.*
 
 object ModItems {
@@ -105,6 +106,18 @@ object ModItems {
     val KAUPEN_SMITHING_TEMPLATE = registerItem(
         "kaupen_armor_trim_smithing_template",
         { settings -> SmithingTemplateItem.of(settings) },
+        Item.Settings()
+    )
+
+    val KAUPEN_BOW = registerItem(
+        "kaupen_bow",
+        ::BowItem,
+        Item.Settings().maxDamage(200)
+    )
+
+    val STRAWBERRY_SEEDS = registerItem(
+        "strawberry_seeds",
+        { settings -> AliasedBlockItem(ModBlocks.STRAWBERRIES, settings) },
         Item.Settings()
     )
 

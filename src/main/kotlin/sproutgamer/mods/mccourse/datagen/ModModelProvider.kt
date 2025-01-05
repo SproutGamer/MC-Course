@@ -1,25 +1,14 @@
 package sproutgamer.mods.mccourse.datagen
 
-import kotlinx.io.files.Path
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
-import net.minecraft.block.DirtPathBlock
 import net.minecraft.client.data.*
-import net.minecraft.client.render.item.model.ItemModel
-import net.minecraft.client.render.item.property.bool.BooleanProperties
-import net.minecraft.client.render.item.property.bool.BooleanProperty
-import net.minecraft.client.render.item.property.bool.BundleHasSelectedItemProperty
-import net.minecraft.client.render.model.Baker
-import net.minecraft.item.Item
 import net.minecraft.item.Items
-import net.minecraft.util.Identifier
-import sproutgamer.mods.mccourse.MCCourse
 import sproutgamer.mods.mccourse.block.ModBlocks
+import sproutgamer.mods.mccourse.block.StrawberriesBlock
 import sproutgamer.mods.mccourse.block.type.FluoriteLampBlock
-import sproutgamer.mods.mccourse.component.ModDataComponentTypes
 import sproutgamer.mods.mccourse.equipment.ModEquipmentAssetKeys
 import sproutgamer.mods.mccourse.item.ModItems
-import sproutgamer.mods.mccourse.property.ModBooleanProperties
 import sproutgamer.mods.mccourse.property.type.OnProperty
 
 class ModModelProvider(output: FabricDataOutput?) : FabricModelProvider(output) {
@@ -53,6 +42,8 @@ class ModModelProvider(output: FabricDataOutput?) : FabricModelProvider(output) 
 
             blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.FLUORITE_LAMP)
                 .coordinate(BlockStateModelGenerator.createBooleanModelMap(FluoriteLampBlock.LIT, lampOnId, lampOffId)))
+
+            blockStateModelGenerator.registerCrop(ModBlocks.STRAWBERRIES, StrawberriesBlock.AGE, 0, 1, 2, 3, 4, 5)
         }
     }
 
@@ -90,6 +81,9 @@ class ModModelProvider(output: FabricDataOutput?) : FabricModelProvider(output) 
             val dataTabletOnId = itemModelGenerator.registerSubModel(ModItems.DATA_TABLET, "_on", Models.GENERATED)
 
             itemModelGenerator.registerCondition(ModItems.DATA_TABLET, OnProperty(), ItemModels.basic(dataTabletOnId), ItemModels.basic(dataTabletOffId))
+
+            itemModelGenerator.registerSubModel(ModItems.KAUPEN_BOW, "", Models.GENERATED)
+            itemModelGenerator.registerBow(ModItems.KAUPEN_BOW)
         }
     }
 

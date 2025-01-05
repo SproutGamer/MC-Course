@@ -28,6 +28,7 @@ object ModItemGroups {
             entries.add(ModItems.CHAINSAW)
             entries.add(ModBlocks.MAGIC_BLOCK)
             entries.add(ModItems.STRAWBERRY)
+            entries.add(ModItems.STRAWBERRY_SEEDS)
             entries.add(ModItems.STARLIGHT_ASHES)
 
             entries.add(ModBlocks.FLUORITE_STAIRS)
@@ -54,6 +55,13 @@ object ModItemGroups {
             entries.add(ModItems.FLUORITE_BOOTS)
 
             entries.add(ModItems.FLUORITE_HORSE_ARMOR)
+
+            entries.add(ModItems.METAL_DETECTOR)
+            entries.add(ModItems.DATA_TABLET)
+            entries.add(ModItems.KAUPEN_SMITHING_TEMPLATE)
+            entries.add(ModItems.KAUPEN_BOW)
+
+            entries.add(ModBlocks.FLUORITE_LAMP)
 
             entries.add(ModBlocks.LUCKY_BLOCK)
             entries.add(ModItems.EXPLOSIVE_SNOWBALL)

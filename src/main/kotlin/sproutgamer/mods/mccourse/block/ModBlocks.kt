@@ -10,7 +10,7 @@ import net.minecraft.util.math.intprovider.UniformIntProvider
 import org.slf4j.Logger
 import sproutgamer.mods.mccourse.MCCourse
 import sproutgamer.mods.mccourse.block.type.FluoriteLampBlock
-import sproutgamer.mods.mccourse.block.type.LuckyBlock
+import sproutgamer.mods.mccourse.block.type.luckyblock.LuckyBlock
 import sproutgamer.mods.mccourse.block.type.MagicBlock
 
 object ModBlocks {
@@ -106,17 +106,21 @@ object ModBlocks {
         "fluorite_lamp", ::FluoriteLampBlock, AbstractBlock.Settings.create()
             .strength(1f).requiresTool().luminance { state -> state[FluoriteLampBlock.LUMINANCE] })
 
+    val STRAWBERRIES = registerBlock("strawberries", ::StrawberriesBlock,
+        AbstractBlock.Settings.copy(Blocks.CARROTS), false)
+
 
     private fun registerBlock(
         path: String,
         factory: (AbstractBlock.Settings) -> Block,
-        settings: AbstractBlock.Settings
+        settings: AbstractBlock.Settings,
+        registerItem: Boolean = true
     ): Block {
         val id = Identifier.of(MCCourse.ID, path)
         val registryKey = RegistryKey.of(RegistryKeys.BLOCK, id)
 
         val block = Blocks.register(registryKey, factory, settings)
-        Items.register(block)
+        if (registerItem) Items.register(block)
         return block
     }
 

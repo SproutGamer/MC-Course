@@ -1,11 +1,10 @@
-package sproutgamer.mods.mccourse.block.type
+package sproutgamer.mods.mccourse.block.type.luckyblock
 
 import net.minecraft.block.Block
 import net.minecraft.block.BlockState
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.util.math.BlockPos
 import net.minecraft.world.World
-import sproutgamer.mods.mccourse.event.LuckyBlockEvents
 
 class LuckyBlock(settings: Settings?) : Block(settings) {
 

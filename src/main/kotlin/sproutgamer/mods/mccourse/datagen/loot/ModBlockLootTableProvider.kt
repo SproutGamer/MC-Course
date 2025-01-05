@@ -6,14 +6,17 @@ import net.minecraft.block.Block
 import net.minecraft.enchantment.Enchantments
 import net.minecraft.item.Item
 import net.minecraft.loot.LootTable
+import net.minecraft.loot.condition.BlockStatePropertyLootCondition
 import net.minecraft.loot.entry.ItemEntry
 import net.minecraft.loot.entry.LootPoolEntry
 import net.minecraft.loot.function.ApplyBonusLootFunction
 import net.minecraft.loot.function.SetCountLootFunction
 import net.minecraft.loot.provider.number.UniformLootNumberProvider
+import net.minecraft.predicate.StatePredicate
 import net.minecraft.registry.RegistryKeys
 import net.minecraft.registry.RegistryWrapper
 import sproutgamer.mods.mccourse.block.ModBlocks
+import sproutgamer.mods.mccourse.block.StrawberriesBlock
 import sproutgamer.mods.mccourse.item.ModItems
 import java.util.concurrent.CompletableFuture
 
@@ -40,6 +43,11 @@ class ModBlockLootTableProvider(dataOutput: FabricDataOutput?,
         addDrop(ModBlocks.FLUORITE_TRAPDOOR)
 
         addDrop(ModBlocks.FLUORITE_LAMP)
+
+        val builder = BlockStatePropertyLootCondition.builder(ModBlocks.STRAWBERRIES)
+            .properties(StatePredicate.Builder.create().exactMatch(StrawberriesBlock.AGE, 5))
+
+        addDrop(ModBlocks.STRAWBERRIES, cropDrops(ModBlocks.STRAWBERRIES, ModItems.STRAWBERRY, ModItems.STRAWBERRY_SEEDS, builder))
 
     }
 

@@ -1,6 +1,7 @@
 package sproutgamer.mods.mccourse
 
 import net.fabricmc.api.ModInitializer
+import net.fabricmc.fabric.api.event.player.AttackEntityCallback
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents
@@ -10,6 +11,7 @@ import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import sproutgamer.mods.mccourse.block.ModBlocks
 import sproutgamer.mods.mccourse.component.ModDataComponentTypes
+import sproutgamer.mods.mccourse.event.AttackEntityHandler
 import sproutgamer.mods.mccourse.event.HammerUsageEvent
 import sproutgamer.mods.mccourse.item.ModItemGroups
 import sproutgamer.mods.mccourse.item.ModItems
@@ -32,9 +34,9 @@ object MCCourse : ModInitializer {
 			builder.add(ModItems.STARLIGHT_ASHES, 600)
 		}
 
-
-
 		PlayerBlockBreakEvents.BEFORE.register(HammerUsageEvent())
+
+		AttackEntityCallback.EVENT.register(AttackEntityHandler())
 
 	}
 

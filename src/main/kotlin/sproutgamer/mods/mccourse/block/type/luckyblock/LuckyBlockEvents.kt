@@ -1,4 +1,4 @@
-package sproutgamer.mods.mccourse.event
+package sproutgamer.mods.mccourse.block.type.luckyblock
 
 import net.minecraft.block.Blocks
 import net.minecraft.component.DataComponentTypes

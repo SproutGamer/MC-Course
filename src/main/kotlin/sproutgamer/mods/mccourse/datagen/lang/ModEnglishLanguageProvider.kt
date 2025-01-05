@@ -31,6 +31,8 @@ class ModEnglishLanguageProvider(
             add(ModItems.CHAINSAW.translationKey + ".coordinates", "Last Chopped Tree at %s")
             add(ModBlocks.MAGIC_BLOCK, "Block of Magic")
             add(ModItems.STRAWBERRY, "Strawberry")
+            add(ModItems.STRAWBERRY_SEEDS, "Strawberry Seeds")
+            add(ModBlocks.STRAWBERRIES, "Strawberry Crop") // This translation will only be seen by people who use WAILA, HWYLA, or Jade.
             add(ModItems.STRAWBERRY.translationKey + ".tooltip", "Warning, may contain luck.")
 
             add(ModItems.FLUORITE_SWORD, "Fluorite Sword")
@@ -85,6 +87,8 @@ class ModEnglishLanguageProvider(
             add(ModBlocks.LUCKY_BLOCK.translationKey + ".event.11.item.lore", "§r§fIt shoots... really fast.")
 
             add("component.mccourse.found_block_data.output_text", "%s at (%s, %s, %s)")
+
+            add(ModItems.KAUPEN_BOW, "Kaupen Bow")
         }
     }
 
